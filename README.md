@@ -6,7 +6,7 @@
 [![](https://images.microbadger.com/badges/image/tboerger/hetzner-exporter.svg)](http://microbadger.com/images/tboerger/hetzner-exporter "Get your own image badge on microbadger.com")
 [![Join the chat at https://gitter.im/webhippie/general](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/webhippie/general)
 
-A [Prometheus](https://prometheus.io/) exporter that collects GitHub statistics for defined namespaces and repositories.
+A [Prometheus](https://prometheus.io/) exporter that collects Hetzner statistics.
 
 
 ## Installation
