@@ -20,12 +20,14 @@ _cgo_export.*
 _testmain.go
 
 *.exe
-*.tar.gz
+*.test
+*.prof
 
-.deps
-dependencies-stamp
+coverage.out
 
-/.build
-/.release
-/.tarballs
-/hetzner_exporter
+/_tools
+/vendor
+/bin
+/dist
+
+.envrc

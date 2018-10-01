@@ -1,17 +1,17 @@
-# Contributing to Hetzner Exporter
+# Contributing to Promhippie
 
-Welcome! Our community focuses on helping others and making Hetzner Exporter the best it can be. We gladly accept contributions and encourage you to get involved!
+Welcome! Our community focuses on helping others and making this project the best it can be. We gladly accept contributions and encourage you to get involved!
 
 
 ## Bug reports
 
 Please search the issues on the issue tracker with a variety of keywords to ensure your bug is not already reported.
 
-If unique, [open an issue](https://github.com/webhippie/hetzner_exporter/issues) and answer the questions so we can understand and reproduce the problematic behavior.
+If unique, [open an issue](https://github.com/promhippie/hetzner_exporter/issues) and answer the questions so we can understand and reproduce the problematic behavior.
 
-The burden is on you to convince us that it is actually a bug in Hetzner Exporter. This is easiest to do when you write clear, concise instructions so we can reproduce the behavior (even if it seems obvious). The more detailed and specific you are, the faster we will be able to help you. Check out [How to Report Bugs Effectively](http://www.chiark.greenend.org.uk/~sgtatham/bugs.html).
+The burden is on you to convince us that it is actually a bug in our project. This is easiest to do when you write clear, concise instructions so we can reproduce the behavior (even if it seems obvious). The more detailed and specific you are, the faster we will be able to help you. Check out [How to Report Bugs Effectively](http://www.chiark.greenend.org.uk/~sgtatham/bugs.html).
 
-Please be kind, remember that Hetzner Exporter comes at no cost to you, and you're getting free help.
+Please be kind, remember that this project comes at no cost to you, and you're getting free help.
 
 
 ## Check for assigned people
@@ -45,7 +45,7 @@ We keep a changelog in the `CHANGELOG.md` file. This is useful to understand wha
 The sign-off is a simple line at the end of the explanation for the patch. Your signature certifies that you wrote the patch or otherwise have the right to pass it on as an open-source patch. The rules are pretty simple: If you can certify [DCO](DCO), then you just add a line to every git commit message:
 
 ```
-Signed-off-by: Joe Smith <joe.smith@email.com>
+Signed-off-by: Joe Smith <joe.smith@example.com>
 ```
 
 Please use your real name, we really dislike pseudonyms or anonymous contributions. We are in the opensource world without secrets. If you set your `user.name` and `user.email` git configs, you can sign your commit automatically with `git commit -s`.
@@ -53,9 +53,10 @@ Please use your real name, we really dislike pseudonyms or anonymous contributio
 
 ## Collaborator status
 
-If your pull request is merged, congratulations! You're technically a collaborator. We may also grant you "Collaborator status" which means you can push to the repository and merge other pull requests. We hope that you will stay involved by reviewing pull requests, submitting more of your own, and resolving issues as you are able to. Thanks for making Hetzner Exporter amazing!
+If your pull request is merged, congratulations! You're technically a collaborator. We may also grant you "Collaborator status" which means you can push to the repository and merge other pull requests. We hope that you will stay involved by reviewing pull requests, submitting more of your own, and resolving issues as you are able to. Thanks for making this project amazing!
 
-We ask that collaborators will conduct thorough code reviews and be nice to new contributors. Before merging a PR, it's best to get the approval of at least one or two other collaborators and/or the project owner. We prefer squashed commits instead of many little, semantically-unimportant commits. Also, CI and other post-commit hooks must pass before being merged except in certain unusual circumstances.
+We ask that collaborators will conduct thorough code reviews and be nice to new contributors. Before merging a PR, it's best to get the approval of at least one or two other collaborators and/or the project owner. We prefer squashed commits instead of many little, semantically-unimportant commits. Also,
+CI and other post-commit hooks must pass before being merged except in certain unusual circumstances.
 
 Collaborator status may be removed for inactive users from time to time as we see fit; this is not an insult, just a basic security precaution in case the account becomes inactive or abandoned. Privileges can always be restored later.
 
@@ -69,4 +70,4 @@ If you've found a vulnerability that is serious, please email to thomas@webhippi
 
 ## Thank you
 
-Thanks for your help! Hetzner Exporter would not be what it is today without your contributions.
+Thanks for your help! This project would not be what it is today without your contributions.

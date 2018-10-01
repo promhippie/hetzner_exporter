@@ -1,0 +1,15 @@
+baseURL = "https://promhippie.github.io/hetzner_exporter/"
+languageCode = "en-us"
+title = "Hetzner Exporter"
+
+[blackfriday]
+  angledQuotes = true
+  fractions = false
+  plainIDAnchors = true
+  smartlists = true
+  extensions = ["hardLineBreak"]
+
+[params]
+  author = "Thomas Boerger"
+  description = "Export Hetzner metrics for Prometheus"
+  keywords = "prometheus, exporter, hetzner, robot"

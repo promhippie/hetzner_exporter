@@ -1,45 +1,145 @@
-GO := GO15VENDOREXPERIMENT=1 go
-PROMU := $(GOPATH)/bin/promu
-PKGS := $(shell $(GO) list ./... | grep -v /vendor/)
+NAME := hetzner_exporter
+IMPORT := github.com/promhippie/$(NAME)
+DIST := dist
 
-PREFIX ?= $(shell pwd)
-BIN_DIR ?= $(shell pwd)
-DOCKER_IMAGE_NAME ?= hetzner-exporter
-DOCKER_IMAGE_TAG ?= $(subst /,-,$(shell git rev-parse --abbrev-ref HEAD))
+ifeq ($(OS), Windows_NT)
+	EXECUTABLE := $(NAME).exe
+	HAS_RETOOL := $(shell where retool)
+else
+	EXECUTABLE := $(NAME)
+	HAS_RETOOL := $(shell command -v retool)
+endif
 
-all: format build test
+PACKAGES ?= $(shell go list ./... | grep -v /vendor/ | grep -v /_tools/)
+SOURCES ?= $(shell find . -name "*.go" -type f -not -path "./vendor/*" -not -path "./_tools/*")
 
-style:
-	@echo ">> checking code style"
-	@! gofmt -d $(shell find . -path ./vendor -prune -o -name '*.go' -print) | grep '^'
+TAGS ?=
 
-test:
-	@echo ">> running tests"
-	@$(GO) test -short $(PKGS)
+ifndef VERSION
+	ifneq ($(DRONE_TAG),)
+		VERSION ?= $(subst v,,$(DRONE_TAG))
+	else
+		ifneq ($(DRONE_BRANCH),)
+			VERSION ?= 0.0.0-$(subst /,,$(DRONE_BRANCH))
+		else
+			VERSION ?= 0.0.0-master
+		endif
+	endif
+endif
 
-format:
-	@echo ">> formatting code"
-	@$(GO) fmt $(PKGS)
+ifndef SHA
+	SHA := $(shell git rev-parse --short HEAD)
+endif
 
+ifndef DATE
+	DATE := $(shell date -u '+%Y%m%d')
+endif
+
+LDFLAGS += -s -w -X "$(IMPORT)/pkg/version.Version=$(VERSION)" -X "$(IMPORT)/pkg/version.Revision=$(SHA)" -X "$(IMPORT)/pkg/version.BuildDate=$(DATE)"
+
+.PHONY: all
+all: build
+
+.PHONY: update
+update:
+	retool do dep ensure -update
+
+.PHONY: sync
+sync:
+	retool do dep ensure
+
+.PHONY: clean
+clean:
+	go clean -i ./...
+	rm -rf bin/ $(DIST)/
+
+.PHONY: fmt
+fmt:
+	gofmt -s -w $(SOURCES)
+
+.PHONY: vet
 vet:
-	@echo ">> vetting code"
-	@$(GO) vet $(PKGS)
+	go vet $(PACKAGES)
 
-build: promu
-	@echo ">> building binaries"
-	@$(PROMU) build --prefix $(PREFIX)
+.PHONY: megacheck
+megacheck:
+	retool do megacheck $(PACKAGES)
 
-tarball: promu
-	@echo ">> building release tarball"
-	@$(PROMU) tarball $(BIN_DIR) --prefix $(PREFIX)
+.PHONY: lint
+lint:
+	for PKG in $(PACKAGES); do retool do golint -set_exit_status $$PKG || exit 1; done;
 
-docker:
-	@echo ">> building docker image"
-	@docker build -t "$(DOCKER_IMAGE_NAME):$(DOCKER_IMAGE_TAG)" .
+.PHONY: generate
+generate:
+	retool do go generate $(PACKAGES)
 
-promu:
-	@which promu > /dev/null; if [ $$? -ne 0 ]; then \
-		$(GO) get -u github.com/prometheus/promu; \
-	fi
+.PHONY: test
+test:
+	retool do goverage -v -coverprofile coverage.out $(PACKAGES)
 
-.PHONY: all style format build test vet tarball docker promu
+.PHONY: install
+install: $(SOURCES)
+	go install -v -tags '$(TAGS)' -ldflags '$(LDFLAGS)' ./cmd/$(NAME)
+
+.PHONY: build
+build: bin/$(EXECUTABLE)
+
+bin/$(EXECUTABLE): $(SOURCES)
+	go build -i -v -tags '$(TAGS)' -ldflags '$(LDFLAGS)' -o $@ ./cmd/$(NAME)
+
+.PHONY: release
+release: release-dirs release-windows release-linux release-darwin release-copy release-check
+
+.PHONY: release-dirs
+release-dirs:
+	mkdir -p $(DIST)/binaries $(DIST)/release
+
+.PHONY: release-windows
+release-windows:
+ifeq ($(CI),drone)
+	xgo -dest $(DIST)/binaries -tags 'netgo $(TAGS)' -ldflags '-linkmode external -extldflags "-static" $(LDFLAGS)' -targets 'windows/*' -out $(EXECUTABLE)-$(VERSION)  ./cmd/$(NAME)
+	mv /build/* $(DIST)/binaries
+else
+	retool do xgo -dest $(DIST)/binaries -tags 'netgo $(TAGS)' -ldflags '-linkmode external -extldflags "-static" $(LDFLAGS)' -targets 'windows/*' -out $(EXECUTABLE)-$(VERSION)  ./cmd/$(NAME)
+endif
+
+.PHONY: release-linux
+release-linux:
+ifeq ($(CI),drone)
+	xgo -dest $(DIST)/binaries -tags 'netgo $(TAGS)' -ldflags '-linkmode external -extldflags "-static" $(LDFLAGS)' -targets 'linux/*' -out $(EXECUTABLE)-$(VERSION)  ./cmd/$(NAME)
+	mv /build/* $(DIST)/binaries
+else
+	retool do xgo -dest $(DIST)/binaries -tags 'netgo $(TAGS)' -ldflags '-linkmode external -extldflags "-static" $(LDFLAGS)' -targets 'linux/*' -out $(EXECUTABLE)-$(VERSION)  ./cmd/$(NAME)
+endif
+
+.PHONY: release-darwin
+release-darwin:
+ifeq ($(CI),drone)
+	xgo -dest $(DIST)/binaries -tags 'netgo $(TAGS)' -ldflags '$(LDFLAGS)' -targets 'darwin/*' -out $(EXECUTABLE)-$(VERSION)  ./cmd/$(NAME)
+	mv /build/* $(DIST)/binaries
+else
+	retool do xgo -dest $(DIST)/binaries -tags 'netgo $(TAGS)' -ldflags '$(LDFLAGS)' -targets 'darwin/*' -out $(EXECUTABLE)-$(VERSION)  ./cmd/$(NAME)
+endif
+
+.PHONY: release-copy
+release-copy:
+	$(foreach file,$(wildcard $(DIST)/binaries/$(EXECUTABLE)-*),cp $(file) $(DIST)/release/$(notdir $(file));)
+
+.PHONY: release-check
+release-check:
+	cd $(DIST)/release; $(foreach file,$(wildcard $(DIST)/release/$(EXECUTABLE)-*),sha256sum $(notdir $(file)) > $(notdir $(file)).sha256;)
+
+.PHONY: publish
+publish: release
+
+.PHONY: docs
+docs:
+	hugo -s docs/
+
+.PHONY: retool
+retool:
+ifndef HAS_RETOOL
+	go get -u github.com/twitchtv/retool
+endif
+	retool sync
+	retool build
