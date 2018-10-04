@@ -28,7 +28,7 @@ func NewSSHKeyCollector(logger log.Logger, client *hetzner.Client, failures *pro
 	labels := []string{"name", "type", "size", "fingerprint"}
 	return &SSHKeyCollector{
 		client:   client,
-		logger:   logger,
+		logger:   log.With(logger, "collector", "ssh_key"),
 		failures: failures,
 		duration: duration,
 		timeout:  timeout,

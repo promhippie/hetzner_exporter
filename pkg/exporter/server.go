@@ -35,7 +35,7 @@ func NewServerCollector(logger log.Logger, client *hetzner.Client, failures *pro
 	labels := []string{"id", "name", "datacenter"}
 	return &ServerCollector{
 		client:   client,
-		logger:   logger,
+		logger:   log.With(logger, "collector", "server"),
 		failures: failures,
 		duration: duration,
 		timeout:  timeout,
