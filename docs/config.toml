@@ -1,6 +1,7 @@
 baseURL = "https://promhippie.github.io/hetzner_exporter/"
 languageCode = "en-us"
 title = "Hetzner Exporter"
+pygmentsUseClasses = true
 
 [blackfriday]
   angledQuotes = true
