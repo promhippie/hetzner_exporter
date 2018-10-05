@@ -56,7 +56,7 @@ func main() {
 			&cli.StringFlag{
 				Name:        "web.address",
 				Aliases:     []string{"web.listen-address"},
-				Value:       "0.0.0.0:9107",
+				Value:       "0.0.0.0:9502",
 				Usage:       "Address to bind the metrics server",
 				EnvVars:     []string{"HETZNER_EXPORTER_WEB_ADDRESS"},
 				Destination: &cfg.Server.Addr,
