@@ -7,8 +7,6 @@ LABEL maintainer="Thomas Boerger <thomas@webhippie.de>" `
   org.label-schema.schema-version="1.0"
 
 EXPOSE 9502
-
 ENTRYPOINT ["c:\\hetzner_exporter.exe"]
-CMD ["server"]
 
 COPY bin/hetzner_exporter.exe c:\hetzner_exporter.exe
