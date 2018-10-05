@@ -90,6 +90,20 @@ func main() {
 				EnvVars:     []string{"HETZNER_EXPORTER_PASSWORD"},
 				Destination: &cfg.Target.Password,
 			},
+			&cli.BoolFlag{
+				Name:        "collector.servers",
+				Value:       true,
+				Usage:       "Enable collector for servers",
+				EnvVars:     []string{"HETZNER_EXPORTER_COLLECTOR_SERVERS"},
+				Destination: &cfg.Collector.Servers,
+			},
+			&cli.BoolFlag{
+				Name:        "collector.ssh-keys",
+				Value:       true,
+				Usage:       "Enable collector for SSH keys",
+				EnvVars:     []string{"HETZNER_EXPORTER_COLLECTOR_SSH_KEYS"},
+				Destination: &cfg.Collector.SSHKeys,
+			},
 		},
 		Action: func(c *cli.Context) error {
 			logger := setupLogger(cfg)
