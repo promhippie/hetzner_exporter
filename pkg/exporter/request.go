@@ -10,7 +10,7 @@ func RequestDuration() *prometheus.HistogramVec {
 		prometheus.HistogramOpts{
 			Namespace: namespace,
 			Name:      "request_duration_seconds",
-			Help:      "Histogram of latencies for requests to the HetznerCloud API per collector.",
+			Help:      "Histogram of latencies for requests to the Hetzner API per collector.",
 			Buckets:   []float64{0.001, 0.01, 0.1, 0.5, 1.0, 2.0, 5.0, 10.0},
 		},
 		[]string{"collector"},
@@ -23,7 +23,7 @@ func RequestFailures() *prometheus.CounterVec {
 		prometheus.CounterOpts{
 			Namespace: namespace,
 			Name:      "request_failures_total",
-			Help:      "Total number of failed requests to the HetznerCloud API per collector.",
+			Help:      "Total number of failed requests to the Hetzner API per collector.",
 		},
 		[]string{"collector"},
 	)
