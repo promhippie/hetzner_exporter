@@ -1,21 +1,9 @@
 # Hetzner Exporter
 
 [![Build Status](http://github.dronehippie.de/api/badges/promhippie/hetzner_exporter/status.svg)](http://github.dronehippie.de/promhippie/hetzner_exporter)
-
-
-
 [![Stories in Ready](https://badge.waffle.io/promhippie/hetzner_exporter.svg?label=ready&title=Ready)](http://waffle.io/promhippie/hetzner_exporter)
-
-
-
 [![Join the Matrix chat at https://matrix.to/#/#webhippie:matrix.org](https://img.shields.io/badge/matrix-%23webhippie-7bc9a4.svg)](https://matrix.to/#/#webhippie:matrix.org)
-
-
-
-[![Codacy Badge](https://api.codacy.com/project/badge/Grade/d7900c4c246740edb77cf29a4b1d85ee)](https://www.codacy.com/app/promhippie/hetzner_exporter?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=promhippie/hetzner_exporter&amp;utm_campaign=Badge_Grade)
-
-
-
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/f26fafdffe134732b196de6c5e2f16b8)](https://www.codacy.com/app/promhippie/hetzner_exporter?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=promhippie/hetzner_exporter&amp;utm_campaign=Badge_Grade)
 [![Go Doc](https://godoc.org/github.com/promhippie/hetzner_exporter?status.svg)](http://godoc.org/github.com/promhippie/hetzner_exporter)
 [![Go Report](http://goreportcard.com/badge/github.com/promhippie/hetzner_exporter)](http://goreportcard.com/report/github.com/promhippie/hetzner_exporter)
 [![](https://images.microbadger.com/badges/image/promhippie/hetzner-exporter.svg)](http://microbadger.com/images/promhippie/hetzner-exporter "Get your own image badge on microbadger.com")
