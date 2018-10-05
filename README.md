@@ -8,12 +8,12 @@
 [![Go Report](http://goreportcard.com/badge/github.com/promhippie/hetzner_exporter)](http://goreportcard.com/report/github.com/promhippie/hetzner_exporter)
 [![](https://images.microbadger.com/badges/image/promhippie/hetzner-exporter.svg)](http://microbadger.com/images/promhippie/hetzner-exporter "Get your own image badge on microbadger.com")
 
-TBD
+An exporter for [Prometheus](https://prometheus.io/) that collects metrics from [Hetzner](http://robot.your-server.de).
 
 
 ## Install
 
-You can download prebuilt binaries from our [GitHub releases](https://github.com/promhippie/hetzner_exporter/releases), or you can use our Docker images published on [Docker Hub](https://hub.docker.com/r/promhippie/hetzner-exporter/tags/).
+You can download prebuilt binaries from our [GitHub releases](https://github.com/promhippie/hetzner_exporter/releases), or you can use our Docker images published on [Docker Hub](https://hub.docker.com/r/promhippie/hetzner-exporter/tags/). If you need further guidance how to install this take a look at our [documentation](https://promhippie.github.io/hetzner_exporter/#getting-started).
 
 
 ## Development
