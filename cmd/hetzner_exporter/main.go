@@ -10,7 +10,7 @@ import (
 	"github.com/promhippie/hetzner_exporter/pkg/action"
 	"github.com/promhippie/hetzner_exporter/pkg/config"
 	"github.com/promhippie/hetzner_exporter/pkg/version"
-	"github.com/urfave/cli"
+	"gopkg.in/urfave/cli.v2"
 )
 
 var (
