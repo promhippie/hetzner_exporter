@@ -8,6 +8,7 @@ import (
 	"github.com/go-kit/kit/log"
 	"github.com/go-kit/kit/log/level"
 	"github.com/prometheus/client_golang/prometheus"
+	"github.com/promhippie/hetzner_exporter/pkg/config"
 )
 
 // SSHKeyCollector collects metrics about the SSH keys.
@@ -16,14 +17,16 @@ type SSHKeyCollector struct {
 	logger   log.Logger
 	failures *prometheus.CounterVec
 	duration *prometheus.HistogramVec
-	timeout  time.Duration
+	config   config.Target
 
 	Key *prometheus.Desc
 }
 
 // NewSSHKeyCollector returns a new SSHKeyCollector.
-func NewSSHKeyCollector(logger log.Logger, client *hetzner.Client, failures *prometheus.CounterVec, duration *prometheus.HistogramVec, timeout time.Duration) *SSHKeyCollector {
-	failures.WithLabelValues("ssh_key").Add(0)
+func NewSSHKeyCollector(logger log.Logger, client *hetzner.Client, failures *prometheus.CounterVec, duration *prometheus.HistogramVec, cfg config.Target) *SSHKeyCollector {
+	if failures != nil {
+		failures.WithLabelValues("ssh_key").Add(0)
+	}
 
 	labels := []string{"name", "type", "size", "fingerprint"}
 	return &SSHKeyCollector{
@@ -31,7 +34,7 @@ func NewSSHKeyCollector(logger log.Logger, client *hetzner.Client, failures *pro
 		logger:   log.With(logger, "collector", "ssh_key"),
 		failures: failures,
 		duration: duration,
-		timeout:  timeout,
+		config:   cfg,
 
 		Key: prometheus.NewDesc(
 			"hetzner_ssh_key",
@@ -39,6 +42,13 @@ func NewSSHKeyCollector(logger log.Logger, client *hetzner.Client, failures *pro
 			labels,
 			nil,
 		),
+	}
+}
+
+// Metrics simply returns the list metric descriptors for generating a documentation.
+func (c *SSHKeyCollector) Metrics() []*prometheus.Desc {
+	return []*prometheus.Desc{
+		c.Key,
 	}
 }
 
@@ -50,7 +60,7 @@ func (c *SSHKeyCollector) Describe(ch chan<- *prometheus.Desc) {
 // Collect is called by the Prometheus registry when collecting metrics.
 func (c *SSHKeyCollector) Collect(ch chan<- prometheus.Metric) {
 	now := time.Now()
-	keys, _, err := c.client.WithTimeout(c.timeout).SSHKey.List()
+	keys, _, err := c.client.WithTimeout(c.config.Timeout).SSHKey.List()
 	c.duration.WithLabelValues("ssh_key").Observe(time.Since(now).Seconds())
 
 	if err != nil {

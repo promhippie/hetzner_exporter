@@ -10,6 +10,7 @@ import (
 	"github.com/go-kit/kit/log"
 	"github.com/go-kit/kit/log/level"
 	"github.com/prometheus/client_golang/prometheus"
+	"github.com/promhippie/hetzner_exporter/pkg/config"
 )
 
 // ServerCollector collects metrics about the account in general.
@@ -18,7 +19,7 @@ type ServerCollector struct {
 	logger   log.Logger
 	failures *prometheus.CounterVec
 	duration *prometheus.HistogramVec
-	timeout  time.Duration
+	config   config.Target
 
 	Up        *prometheus.Desc
 	Traffic   *prometheus.Desc
@@ -29,8 +30,10 @@ type ServerCollector struct {
 }
 
 // NewServerCollector returns a new ServerCollector.
-func NewServerCollector(logger log.Logger, client *hetzner.Client, failures *prometheus.CounterVec, duration *prometheus.HistogramVec, timeout time.Duration) *ServerCollector {
-	failures.WithLabelValues("account").Add(0)
+func NewServerCollector(logger log.Logger, client *hetzner.Client, failures *prometheus.CounterVec, duration *prometheus.HistogramVec, cfg config.Target) *ServerCollector {
+	if failures != nil {
+		failures.WithLabelValues("account").Add(0)
+	}
 
 	labels := []string{"id", "name", "datacenter"}
 	return &ServerCollector{
@@ -38,7 +41,7 @@ func NewServerCollector(logger log.Logger, client *hetzner.Client, failures *pro
 		logger:   log.With(logger, "collector", "server"),
 		failures: failures,
 		duration: duration,
-		timeout:  timeout,
+		config:   cfg,
 
 		Up: prometheus.NewDesc(
 			"hetzner_server_running",
@@ -79,6 +82,18 @@ func NewServerCollector(logger log.Logger, client *hetzner.Client, failures *pro
 	}
 }
 
+// Metrics simply returns the list metric descriptors for generating a documentation.
+func (c *ServerCollector) Metrics() []*prometheus.Desc {
+	return []*prometheus.Desc{
+		c.Up,
+		c.Traffic,
+		c.Paid,
+		c.Flatrate,
+		c.Throttled,
+		c.Cancelled,
+	}
+}
+
 // Describe sends the super-set of all possible descriptors of metrics collected by this Collector.
 func (c *ServerCollector) Describe(ch chan<- *prometheus.Desc) {
 	ch <- c.Up
@@ -92,7 +107,7 @@ func (c *ServerCollector) Describe(ch chan<- *prometheus.Desc) {
 // Collect is called by the Prometheus registry when collecting metrics.
 func (c *ServerCollector) Collect(ch chan<- prometheus.Metric) {
 	now := time.Now()
-	servers, _, err := c.client.WithTimeout(c.timeout).Server.ListServers()
+	servers, _, err := c.client.WithTimeout(c.config.Timeout).Server.ListServers()
 	c.duration.WithLabelValues("server").Observe(time.Since(now).Seconds())
 
 	if err != nil {

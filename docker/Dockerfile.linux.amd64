@@ -1,17 +1,18 @@
-FROM webhippie/alpine:latest AS build
+FROM webhippie/alpine:latest-amd64 AS build
 RUN apk add --no-cache ca-certificates mailcap
 
 FROM scratch
 
 LABEL maintainer="Thomas Boerger <thomas@webhippie.de>" \
-  org.label-schema.name="Hetzner Exporter" \
-  org.label-schema.vendor="Thomas Boerger" \
-  org.label-schema.schema-version="1.0"
+  org.opencontainers.image.title="Hetzner Exporter" \
+  org.opencontainers.image.documentation="https://promhippie.github.io/hetzner_exporter/" \
+  org.opencontainers.image.vendor="Thomas Boerger"
 
 EXPOSE 9502
 ENTRYPOINT ["/usr/bin/hetzner_exporter"]
+HEALTHCHECK CMD ["/usr/bin/hetzner_exporter", "health"]
 
 COPY --from=build /etc/ssl/certs/ca-certificates.crt /etc/ssl/certs/
 COPY --from=build /etc/mime.types /etc/
 
-COPY dist/binaries/hetzner_exporter-*-linux-amd64 /usr/bin/hetzner_exporter
+COPY bin/hetzner_exporter /usr/bin/hetzner_exporter
