@@ -1,3 +1,4 @@
+//go:build ignore
 // +build ignore
 
 package main
@@ -5,6 +6,7 @@ package main
 import (
 	"fmt"
 	"os"
+	"strconv"
 	"strings"
 
 	"github.com/promhippie/hetzner_exporter/pkg/command"
@@ -29,6 +31,14 @@ func main() {
 			flags = append(flags, flag{
 				Flag:    v.Name,
 				Default: v.Value,
+				Envs:    v.EnvVars,
+				Help:    v.Usage,
+				List:    false,
+			})
+		case *cli.IntFlag:
+			flags = append(flags, flag{
+				Flag:    v.Name,
+				Default: strconv.Itoa(v.Value),
 				Envs:    v.EnvVars,
 				Help:    v.Usage,
 				List:    false,
