@@ -1,0 +1,103 @@
+---
+name: changes
+
+"on":
+  push:
+    branches:
+      - master
+
+jobs:
+  changelog:
+    runs-on: ubuntu-20.04
+
+    steps:
+      - name: Checkout source
+        id: source
+        uses: actions/checkout@v3
+        with:
+          token: ${{ secrets.BOT_ACCESS_TOKEN }}
+
+      - name: Setup golang
+        id: golang
+        uses: actions/setup-go@v2
+        with:
+          go-version: 1.18.1
+
+      - name: Run changelog
+        id: changelog
+        run: make changelog
+
+      - name: Commit changes
+        id: commit
+        uses: EndBug/add-and-commit@v9
+        with:
+          author_name: GitHub Actions
+          author_email: github@webhippie.de
+          add: CHANGELOG.md
+          message: Automated changelog update
+          push: true
+          commit: --signoff
+
+  envvars:
+    runs-on: ubuntu-20.04
+
+    steps:
+      - name: Checkout source
+        id: source
+        uses: actions/checkout@v3
+        with:
+          token: ${{ secrets.BOT_ACCESS_TOKEN }}
+
+      - name: Setup golang
+        id: golang
+        uses: actions/setup-go@v2
+        with:
+          go-version: 1.18.1
+
+      - name: Generate envvars
+        id: envvars
+        run: make envvars
+
+      - name: Commit changes
+        id: commit
+        uses: EndBug/add-and-commit@v9
+        with:
+          author_name: GitHub Actions
+          author_email: github@webhippie.de
+          add: docs/partials/envvars.md
+          message: Automated envvars update
+          push: true
+          commit: --signoff
+
+  metrics:
+    runs-on: ubuntu-20.04
+
+    steps:
+      - name: Checkout source
+        id: source
+        uses: actions/checkout@v3
+        with:
+          token: ${{ secrets.BOT_ACCESS_TOKEN }}
+
+      - name: Setup golang
+        id: golang
+        uses: actions/setup-go@v2
+        with:
+          go-version: 1.18.1
+
+      - name: Generate metrics
+        id: metrics
+        run: make metrics
+
+      - name: Commit changes
+        id: commit
+        uses: EndBug/add-and-commit@v9
+        with:
+          author_name: GitHub Actions
+          author_email: github@webhippie.de
+          add: docs/partials/metrics.md
+          message: Automated metrics update
+          push: true
+          commit: --signoff
+
+...
