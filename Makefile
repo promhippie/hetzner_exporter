@@ -16,22 +16,22 @@ endif
 
 GOBUILD ?= CGO_ENABLED=0 go build
 PACKAGES ?= $(shell go list ./...)
-SOURCES ?= $(shell find . -name "*.go" -type f -not -path "./node_modules/*")
+SOURCES ?= $(shell find . -name "*.go" -type f)
 GENERATE ?= $(PACKAGES)
 
 TAGS ?= netgo
 
 ifndef OUTPUT
-	ifneq ($(DRONE_TAG),)
-		OUTPUT ?= $(subst v,,$(DRONE_TAG))
+	ifeq ($(GITHUB_REF_TYPE), tag)
+		OUTPUT ?= $(subst v,,$(GITHUB_REF_NAME))
 	else
 		OUTPUT ?= testing
 	endif
 endif
 
 ifndef VERSION
-	ifneq ($(DRONE_TAG),)
-		VERSION ?= $(subst v,,$(DRONE_TAG))
+	ifeq ($(GITHUB_REF_TYPE), tag)
+		VERSION ?= $(subst v,,$(GITHUB_REF_NAME))
 	else
 		VERSION ?= $(shell git rev-parse --short HEAD)
 	endif
