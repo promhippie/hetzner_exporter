@@ -1,0 +1,22 @@
+---
+kind: Service
+apiVersion: v1
+
+metadata:
+  name: hetzner-exporter
+  labels:
+    app.kubernetes.io/name: hetzner-exporter
+    app.kubernetes.io/component: exporter
+
+spec:
+  selector:
+    app.kubernetes.io/name: hetzner-exporter
+    app.kubernetes.io/component: exporter
+
+  ports:
+    - name: http
+      port: 9502
+      targetPort: http
+      protocol: TCP
+
+...

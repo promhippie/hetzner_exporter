@@ -1,0 +1,61 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+
+metadata:
+  name: hetzner-exporter
+  labels:
+    app.kubernetes.io/name: hetzner-exporter
+    app.kubernetes.io/component: exporter
+
+spec:
+  replicas: 1
+
+  revisionHistoryLimit: 3
+  progressDeadlineSeconds: 600
+
+  strategy:
+    type: Recreate
+
+  selector:
+    matchLabels:
+      app.kubernetes.io/name: hetzner-exporter
+      app.kubernetes.io/component: exporter
+
+  template:
+    metadata:
+      labels:
+        app.kubernetes.io/name: hetzner-exporter
+        app.kubernetes.io/component: exporter
+
+    spec:
+      restartPolicy: Always
+      terminationGracePeriodSeconds: 30
+
+      containers:
+        - name: exporter
+          image: hetzner-exporter
+          imagePullPolicy: Always
+
+          envFrom:
+            - configMapRef:
+                name: hetzner-exporter
+            - secretRef:
+                name: hetzner-exporter
+
+          ports:
+            - name: http
+              containerPort: 9502
+              protocol: TCP
+
+          livenessProbe:
+            httpGet:
+              path: /healthz
+              port: http
+
+          readinessProbe:
+            httpGet:
+              path: /readyz
+              port: http
+
+...
