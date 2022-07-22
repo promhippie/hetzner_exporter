@@ -15,5 +15,5 @@ pygmentsUseClasses = true
 
 [params]
   author = "Thomas Boerger"
-  description = "Export Hetzner metrics for Prometheus"
+  description = "Prometheus exporter for Hetzner"
   keywords = "prometheus, exporter, hetzner, robot"
