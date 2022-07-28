@@ -5,7 +5,7 @@ import (
 	"os"
 	"time"
 
-	"github.com/go-kit/kit/log/level"
+	"github.com/go-kit/log/level"
 	"github.com/promhippie/hetzner_exporter/pkg/action"
 	"github.com/promhippie/hetzner_exporter/pkg/config"
 	"github.com/promhippie/hetzner_exporter/pkg/version"

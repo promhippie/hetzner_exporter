@@ -3,9 +3,10 @@ package action
 import (
 	"fmt"
 
-	"github.com/go-kit/kit/log"
-	"github.com/go-kit/kit/log/level"
+	"github.com/go-kit/log"
+	"github.com/go-kit/log/level"
 	"github.com/prometheus/client_golang/prometheus"
+	"github.com/prometheus/client_golang/prometheus/collectors"
 	"github.com/promhippie/hetzner_exporter/pkg/version"
 )
 
@@ -36,13 +37,13 @@ var (
 )
 
 func init() {
-	registry.MustRegister(prometheus.NewProcessCollector(prometheus.ProcessCollectorOpts{
+	registry.MustRegister(collectors.NewProcessCollector(collectors.ProcessCollectorOpts{
 		Namespace: namespace,
 	}))
 
-	registry.MustRegister(prometheus.NewGoCollector())
-
+	registry.MustRegister(collectors.NewGoCollector())
 	registry.MustRegister(version.Collector(namespace))
+
 	registry.MustRegister(requestDuration)
 	registry.MustRegister(requestFailures)
 }
