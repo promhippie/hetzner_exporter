@@ -1,6 +1,6 @@
 module github.com/promhippie/hetzner_exporter
 
-go 1.18
+go 1.19
 
 require (
 	github.com/appscode/go-hetzner v0.0.0-20180411135907-c038e08b19b1
