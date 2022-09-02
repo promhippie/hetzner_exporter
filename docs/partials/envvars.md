@@ -24,3 +24,6 @@ HETZNER_EXPORTER_COLLECTOR_SERVERS
 
 HETZNER_EXPORTER_COLLECTOR_SSH_KEYS
 : Enable collector for SSH keys, defaults to `true`
+
+HETZNER_EXPORTER_COLLECTOR_STORAGEBOXES
+: Enable collector for Storageboxes, defaults to `false`

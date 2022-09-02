@@ -8,7 +8,6 @@ import (
 	"os/signal"
 	"time"
 
-	"github.com/appscode/go-hetzner"
 	"github.com/go-chi/chi/v5"
 	"github.com/go-kit/log"
 	"github.com/go-kit/log/level"
@@ -16,6 +15,7 @@ import (
 	"github.com/prometheus/client_golang/prometheus/promhttp"
 	"github.com/promhippie/hetzner_exporter/pkg/config"
 	"github.com/promhippie/hetzner_exporter/pkg/exporter"
+	"github.com/promhippie/hetzner_exporter/pkg/internal/hetzner"
 	"github.com/promhippie/hetzner_exporter/pkg/middleware"
 	"github.com/promhippie/hetzner_exporter/pkg/version"
 )
@@ -31,8 +31,8 @@ func Server(cfg *config.Config, logger log.Logger) error {
 	)
 
 	client := hetzner.NewClient(
-		cfg.Target.Username,
-		cfg.Target.Password,
+		hetzner.WithUsername(cfg.Target.Username),
+		hetzner.WithPassword(cfg.Target.Password),
 	)
 
 	var gr run.Group
@@ -116,6 +116,20 @@ func handler(cfg *config.Config, logger log.Logger, client *hetzner.Client) *chi
 		)
 
 		registry.MustRegister(exporter.NewSSHKeyCollector(
+			logger,
+			client,
+			requestFailures,
+			requestDuration,
+			cfg.Target,
+		))
+	}
+
+	if cfg.Collector.Storageboxes {
+		level.Debug(logger).Log(
+			"msg", "Storagebox collector registered",
+		)
+
+		registry.MustRegister(exporter.NewStorageboxCollector(
 			logger,
 			client,
 			requestFailures,

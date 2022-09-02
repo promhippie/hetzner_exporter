@@ -1,14 +1,14 @@
 package exporter
 
 import (
-	"strconv"
+	"context"
 	"time"
 
-	"github.com/appscode/go-hetzner"
 	"github.com/go-kit/log"
 	"github.com/go-kit/log/level"
 	"github.com/prometheus/client_golang/prometheus"
 	"github.com/promhippie/hetzner_exporter/pkg/config"
+	"github.com/promhippie/hetzner_exporter/pkg/internal/hetzner"
 )
 
 // SSHKeyCollector collects metrics about the SSH keys.
@@ -59,8 +59,11 @@ func (c *SSHKeyCollector) Describe(ch chan<- *prometheus.Desc) {
 
 // Collect is called by the Prometheus registry when collecting metrics.
 func (c *SSHKeyCollector) Collect(ch chan<- prometheus.Metric) {
+	ctx, cancel := context.WithTimeout(context.Background(), c.config.Timeout)
+	defer cancel()
+
 	now := time.Now()
-	keys, _, err := c.client.WithTimeout(c.config.Timeout).SSHKey.List()
+	keys, err := c.client.SSHKey.All(ctx)
 	c.duration.WithLabelValues("ssh_key").Observe(time.Since(now).Seconds())
 
 	if err != nil {
@@ -82,7 +85,7 @@ func (c *SSHKeyCollector) Collect(ch chan<- prometheus.Metric) {
 		labels := []string{
 			key.Name,
 			key.Type,
-			strconv.Itoa(key.Size),
+			key.Size,
 			key.Fingerprint,
 		}
 
