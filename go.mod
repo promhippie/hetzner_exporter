@@ -1,9 +1,8 @@
 module github.com/promhippie/hetzner_exporter
 
-go 1.19
+go 1.17
 
 require (
-	github.com/appscode/go-hetzner v0.0.0-20180411135907-c038e08b19b1
 	github.com/dustin/go-humanize v1.0.0
 	github.com/go-chi/chi/v5 v5.0.7
 	github.com/go-kit/log v0.2.1
@@ -14,14 +13,11 @@ require (
 )
 
 require (
-	github.com/appscode/go v0.0.0-20201105063637-5613f3b8169f // indirect
 	github.com/beorn7/perks v1.0.1 // indirect
-	github.com/cenkalti/backoff v2.2.1+incompatible // indirect
 	github.com/cespare/xxhash/v2 v2.1.2 // indirect
 	github.com/cpuguy83/go-md2man/v2 v2.0.2 // indirect
 	github.com/go-logfmt/logfmt v0.5.1 // indirect
 	github.com/golang/protobuf v1.5.2 // indirect
-	github.com/google/go-querystring v1.1.0 // indirect
 	github.com/matttproud/golang_protobuf_extensions v1.0.1 // indirect
 	github.com/prometheus/client_model v0.2.0 // indirect
 	github.com/prometheus/common v0.37.0 // indirect

@@ -1,16 +1,14 @@
 package exporter
 
 import (
-	"strconv"
-	"strings"
+	"context"
 	"time"
 
-	"github.com/appscode/go-hetzner"
-	"github.com/dustin/go-humanize"
 	"github.com/go-kit/log"
 	"github.com/go-kit/log/level"
 	"github.com/prometheus/client_golang/prometheus"
 	"github.com/promhippie/hetzner_exporter/pkg/config"
+	"github.com/promhippie/hetzner_exporter/pkg/internal/hetzner"
 )
 
 // ServerCollector collects metrics about the account in general.
@@ -23,10 +21,9 @@ type ServerCollector struct {
 
 	Up        *prometheus.Desc
 	Traffic   *prometheus.Desc
-	Paid      *prometheus.Desc
 	Flatrate  *prometheus.Desc
-	Throttled *prometheus.Desc
 	Cancelled *prometheus.Desc
+	Paid      *prometheus.Desc
 }
 
 // NewServerCollector returns a new ServerCollector.
@@ -55,27 +52,21 @@ func NewServerCollector(logger log.Logger, client *hetzner.Client, failures *pro
 			labels,
 			nil,
 		),
-		Paid: prometheus.NewDesc(
-			"hetzner_server_paid_timestamp",
-			"Timestamp of the date until server is paid",
-			labels,
-			nil,
-		),
 		Flatrate: prometheus.NewDesc(
 			"hetzner_server_flatrate",
 			"If 1 the server got a flatrate enabled, 0 otherwise",
 			labels,
 			nil,
 		),
-		Throttled: prometheus.NewDesc(
-			"hetzner_server_throttled",
-			"If 1 the server is in a throttled state, 0 otherwise",
-			labels,
-			nil,
-		),
 		Cancelled: prometheus.NewDesc(
 			"hetzner_server_cancelled",
 			"If 1 the server have been cancelled, 0 otherwise",
+			labels,
+			nil,
+		),
+		Paid: prometheus.NewDesc(
+			"hetzner_server_paid_timestamp",
+			"Timestamp of the date until server is paid",
 			labels,
 			nil,
 		),
@@ -87,10 +78,9 @@ func (c *ServerCollector) Metrics() []*prometheus.Desc {
 	return []*prometheus.Desc{
 		c.Up,
 		c.Traffic,
-		c.Paid,
 		c.Flatrate,
-		c.Throttled,
 		c.Cancelled,
+		c.Paid,
 	}
 }
 
@@ -98,16 +88,18 @@ func (c *ServerCollector) Metrics() []*prometheus.Desc {
 func (c *ServerCollector) Describe(ch chan<- *prometheus.Desc) {
 	ch <- c.Up
 	ch <- c.Traffic
-	ch <- c.Paid
 	ch <- c.Flatrate
-	ch <- c.Throttled
 	ch <- c.Cancelled
+	ch <- c.Paid
 }
 
 // Collect is called by the Prometheus registry when collecting metrics.
 func (c *ServerCollector) Collect(ch chan<- prometheus.Metric) {
+	ctx, cancel := context.WithTimeout(context.Background(), c.config.Timeout)
+	defer cancel()
+
 	now := time.Now()
-	servers, _, err := c.client.WithTimeout(c.config.Timeout).Server.ListServers()
+	servers, err := c.client.Server.All(ctx)
 	c.duration.WithLabelValues("server").Observe(time.Since(now).Seconds())
 
 	if err != nil {
@@ -126,84 +118,44 @@ func (c *ServerCollector) Collect(ch chan<- prometheus.Metric) {
 	)
 
 	for _, server := range servers {
-		var (
-			up        float64
-			traffic   float64
-			paid      float64
-			flatrate  float64
-			throttled float64
-			cancelled float64
-		)
-
 		labels := []string{
-			strconv.Itoa(server.ServerNumber),
-			server.ServerName,
-			strings.ToLower(server.Dc),
-		}
-
-		if server.Status == "ready" {
-			up = 1.0
+			server.Number,
+			server.Name,
+			server.Datacenter,
 		}
 
 		ch <- prometheus.MustNewConstMetric(
 			c.Up,
 			prometheus.GaugeValue,
-			up,
+			server.Status,
 			labels...,
 		)
-
-		if num, err := humanize.ParseBytes(server.Traffic); err == nil {
-			traffic = float64(num)
-		}
 
 		ch <- prometheus.MustNewConstMetric(
 			c.Traffic,
 			prometheus.GaugeValue,
-			traffic,
+			server.Traffic,
 			labels...,
 		)
-
-		if num, err := time.Parse("2006-01-02", server.PaidUntil); err == nil {
-			paid = float64(num.Unix())
-		}
-
-		ch <- prometheus.MustNewConstMetric(
-			c.Paid,
-			prometheus.GaugeValue,
-			paid,
-			labels...,
-		)
-
-		if server.Flatrate {
-			flatrate = 1.0
-		}
 
 		ch <- prometheus.MustNewConstMetric(
 			c.Flatrate,
 			prometheus.GaugeValue,
-			flatrate,
+			server.Flatrate,
 			labels...,
 		)
-
-		if server.Throttled {
-			throttled = 1.0
-		}
-
-		ch <- prometheus.MustNewConstMetric(
-			c.Throttled,
-			prometheus.GaugeValue,
-			throttled,
-			labels...,
-		)
-
-		if server.Cancelled {
-			cancelled = 1.0
-		}
 
 		ch <- prometheus.MustNewConstMetric(
 			c.Cancelled,
 			prometheus.GaugeValue,
-			cancelled,
+			server.Cancelled,
+			labels...,
+		)
+
+		ch <- prometheus.MustNewConstMetric(
+			c.Paid,
+			prometheus.GaugeValue,
+			server.Paid,
 			labels...,
 		)
 	}
