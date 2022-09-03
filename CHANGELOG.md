@@ -1,3 +1,30 @@
+# Changelog for unreleased
+
+The following sections list the changes for unreleased.
+
+## Summary
+
+ * Chg #61: Replace archived client library
+ * Chg #61: Add collector for storageboxes
+
+## Details
+
+ * Change #61: Replace archived client library
+
+   We replaced the Hetzner client library by a custom internal package as the upstream library
+   have been archived/deprecated.
+
+   https://github.com/promhippie/hetzner_exporter/issues/61
+
+ * Change #61: Add collector for storageboxes
+
+   We implemented a new collector to gather metrics for the Hetzner storageboxes. You should
+   increase the scrape time as you could reach the API rate limit. This collector will be disabled
+   by default, so you got to enable it via flag or environment variable.
+
+   https://github.com/promhippie/hetzner_exporter/issues/61
+
+
 # Changelog for 1.0.0
 
 The following sections list the changes for 1.0.0.
