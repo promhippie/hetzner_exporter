@@ -1,4 +1,4 @@
-FROM webhippie/alpine:latest-amd64@sha256:ea3f40760198961a98c05065fa3f20def09ac198224dba8771da523726fcfe64 AS build
+FROM webhippie/alpine:latest-amd64@sha256:8b154c66a066fcf548785b164342cd465a55455933da20736547b60e314c3ab1 AS build
 RUN apk add --no-cache ca-certificates mailcap
 
 FROM scratch
