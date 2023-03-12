@@ -31,17 +31,10 @@ The following sections list the changes for 1.0.0.
 
 ## Summary
 
- * Chg #18: Drop darwin/386 release builds
  * Chg #16: Refactor build tools and project structure
+ * Chg #18: Drop darwin/386 release builds
 
 ## Details
-
- * Change #18: Drop darwin/386 release builds
-
-   We dropped the build of 386 builds on Darwin as this architecture is not supported by current Go
-   versions anymore.
-
-   https://github.com/promhippie/hetzner_exporter/issues/18
 
  * Change #16: Refactor build tools and project structure
 
@@ -49,6 +42,13 @@ The following sections list the changes for 1.0.0.
    already got within our GitHub exporter.
 
    https://github.com/promhippie/hetzner_exporter/issues/16
+
+ * Change #18: Drop darwin/386 release builds
+
+   We dropped the build of 386 builds on Darwin as this architecture is not supported by current Go
+   versions anymore.
+
+   https://github.com/promhippie/hetzner_exporter/issues/18
 
 
 # Changelog for 0.1.0
