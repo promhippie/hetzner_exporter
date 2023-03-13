@@ -1,12 +1,7 @@
-FROM webhippie/alpine:latest-amd64@sha256:a7f34d8049f46af2a71044d4bdf21be6d4897c1cd8349d0ff451843f3b573eac AS build
+FROM i386/alpine:3.17@sha256:4aa08ef415aecc80814cb42fa41b658480779d80c77ab151812e0d657580f0ae AS build
 RUN apk add --no-cache ca-certificates mailcap
 
 FROM scratch
-
-LABEL maintainer="Thomas Boerger <thomas@webhippie.de>" \
-  org.opencontainers.image.title="Hetzner Exporter" \
-  org.opencontainers.image.documentation="https://promhippie.github.io/hetzner_exporter/" \
-  org.opencontainers.image.vendor="Thomas Boerger"
 
 EXPOSE 9502
 ENTRYPOINT ["/usr/bin/hetzner_exporter"]
