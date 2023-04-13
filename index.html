@@ -535,41 +535,41 @@ take a look at the <a href="https://github.com/prometheus/client_golang/blob/mas
 <dd>Histogram of latencies for requests to the api per collector</dd>
 <dt>hetzner_request_failures_total{collector}</dt>
 <dd>Total number of failed requests to the api per collector</dd>
-<dt>hetzner_server_cancelled{id, name, datacenter}</dt>
+<dt>hetzner_server_cancelled{&lt;prometheus.ConstrainedLabel Value&gt;, &lt;prometheus.ConstrainedLabel Value&gt;, &lt;prometheus.ConstrainedLabel Value&gt;}</dt>
 <dd>If 1 the server have been cancelled, 0 otherwise</dd>
-<dt>hetzner_server_flatrate{id, name, datacenter}</dt>
+<dt>hetzner_server_flatrate{&lt;prometheus.ConstrainedLabel Value&gt;, &lt;prometheus.ConstrainedLabel Value&gt;, &lt;prometheus.ConstrainedLabel Value&gt;}</dt>
 <dd>If 1 the server got a flatrate enabled, 0 otherwise</dd>
-<dt>hetzner_server_paid_timestamp{id, name, datacenter}</dt>
+<dt>hetzner_server_paid_timestamp{&lt;prometheus.ConstrainedLabel Value&gt;, &lt;prometheus.ConstrainedLabel Value&gt;, &lt;prometheus.ConstrainedLabel Value&gt;}</dt>
 <dd>Timestamp of the date until server is paid</dd>
-<dt>hetzner_server_running{id, name, datacenter}</dt>
+<dt>hetzner_server_running{&lt;prometheus.ConstrainedLabel Value&gt;, &lt;prometheus.ConstrainedLabel Value&gt;, &lt;prometheus.ConstrainedLabel Value&gt;}</dt>
 <dd>If 1 the server is running, 0 otherwise</dd>
-<dt>hetzner_server_traffic_bytes{id, name, datacenter}</dt>
+<dt>hetzner_server_traffic_bytes{&lt;prometheus.ConstrainedLabel Value&gt;, &lt;prometheus.ConstrainedLabel Value&gt;, &lt;prometheus.ConstrainedLabel Value&gt;}</dt>
 <dd>Amount of included traffic for the server</dd>
-<dt>hetzner_ssh_key{name, type, size, fingerprint}</dt>
+<dt>hetzner_ssh_key{&lt;prometheus.ConstrainedLabel Value&gt;, &lt;prometheus.ConstrainedLabel Value&gt;, &lt;prometheus.ConstrainedLabel Value&gt;, &lt;prometheus.ConstrainedLabel Value&gt;}</dt>
 <dd>Information about SSH keys in your Hetzner robot</dd>
-<dt>hetzner_storagebox_cancelled{id, name, location, login}</dt>
+<dt>hetzner_storagebox_cancelled{&lt;prometheus.ConstrainedLabel Value&gt;, &lt;prometheus.ConstrainedLabel Value&gt;, &lt;prometheus.ConstrainedLabel Value&gt;, &lt;prometheus.ConstrainedLabel Value&gt;}</dt>
 <dd>If 1 the storagebox have been cancelled, 0 otherwise</dd>
-<dt>hetzner_storagebox_data{id, name, location, login}</dt>
+<dt>hetzner_storagebox_data{&lt;prometheus.ConstrainedLabel Value&gt;, &lt;prometheus.ConstrainedLabel Value&gt;, &lt;prometheus.ConstrainedLabel Value&gt;, &lt;prometheus.ConstrainedLabel Value&gt;}</dt>
 <dd>Used storage by files for the storagebox in MB</dd>
-<dt>hetzner_storagebox_external{id, name, location, login}</dt>
+<dt>hetzner_storagebox_external{&lt;prometheus.ConstrainedLabel Value&gt;, &lt;prometheus.ConstrainedLabel Value&gt;, &lt;prometheus.ConstrainedLabel Value&gt;, &lt;prometheus.ConstrainedLabel Value&gt;}</dt>
 <dd>If 1 the storagebox can be accessed from external, 0 otherwise</dd>
-<dt>hetzner_storagebox_locked{id, name, location, login}</dt>
+<dt>hetzner_storagebox_locked{&lt;prometheus.ConstrainedLabel Value&gt;, &lt;prometheus.ConstrainedLabel Value&gt;, &lt;prometheus.ConstrainedLabel Value&gt;, &lt;prometheus.ConstrainedLabel Value&gt;}</dt>
 <dd>If 1 the storagebox have been locked, 0 otherwise</dd>
-<dt>hetzner_storagebox_paid{id, name, location, login}</dt>
+<dt>hetzner_storagebox_paid{&lt;prometheus.ConstrainedLabel Value&gt;, &lt;prometheus.ConstrainedLabel Value&gt;, &lt;prometheus.ConstrainedLabel Value&gt;, &lt;prometheus.ConstrainedLabel Value&gt;}</dt>
 <dd>Timestamp of the date until storagebox is paid</dd>
-<dt>hetzner_storagebox_quota{id, name, location, login}</dt>
+<dt>hetzner_storagebox_quota{&lt;prometheus.ConstrainedLabel Value&gt;, &lt;prometheus.ConstrainedLabel Value&gt;, &lt;prometheus.ConstrainedLabel Value&gt;, &lt;prometheus.ConstrainedLabel Value&gt;}</dt>
 <dd>Available storage for the storagebox in MB</dd>
-<dt>hetzner_storagebox_samba{id, name, location, login}</dt>
+<dt>hetzner_storagebox_samba{&lt;prometheus.ConstrainedLabel Value&gt;, &lt;prometheus.ConstrainedLabel Value&gt;, &lt;prometheus.ConstrainedLabel Value&gt;, &lt;prometheus.ConstrainedLabel Value&gt;}</dt>
 <dd>If 1 the storagebox can be accessed via samba, 0 otherwise</dd>
-<dt>hetzner_storagebox_snapshots{id, name, location, login}</dt>
+<dt>hetzner_storagebox_snapshots{&lt;prometheus.ConstrainedLabel Value&gt;, &lt;prometheus.ConstrainedLabel Value&gt;, &lt;prometheus.ConstrainedLabel Value&gt;, &lt;prometheus.ConstrainedLabel Value&gt;}</dt>
 <dd>Used storage by snapshots for the storagebox in MB</dd>
-<dt>hetzner_storagebox_ssh{id, name, location, login}</dt>
+<dt>hetzner_storagebox_ssh{&lt;prometheus.ConstrainedLabel Value&gt;, &lt;prometheus.ConstrainedLabel Value&gt;, &lt;prometheus.ConstrainedLabel Value&gt;, &lt;prometheus.ConstrainedLabel Value&gt;}</dt>
 <dd>If 1 the storagebox can be accessed via ssh, 0 otherwise</dd>
-<dt>hetzner_storagebox_usage{id, name, location, login}</dt>
+<dt>hetzner_storagebox_usage{&lt;prometheus.ConstrainedLabel Value&gt;, &lt;prometheus.ConstrainedLabel Value&gt;, &lt;prometheus.ConstrainedLabel Value&gt;, &lt;prometheus.ConstrainedLabel Value&gt;}</dt>
 <dd>Used storage for the storagebox in MB</dd>
-<dt>hetzner_storagebox_webdav{id, name, location, login}</dt>
+<dt>hetzner_storagebox_webdav{&lt;prometheus.ConstrainedLabel Value&gt;, &lt;prometheus.ConstrainedLabel Value&gt;, &lt;prometheus.ConstrainedLabel Value&gt;, &lt;prometheus.ConstrainedLabel Value&gt;}</dt>
 <dd>If 1 the storagebox can be accessed via webdav, 0 otherwise</dd>
-<dt>hetzner_storagebox_zfs{id, name, location, login}</dt>
+<dt>hetzner_storagebox_zfs{&lt;prometheus.ConstrainedLabel Value&gt;, &lt;prometheus.ConstrainedLabel Value&gt;, &lt;prometheus.ConstrainedLabel Value&gt;, &lt;prometheus.ConstrainedLabel Value&gt;}</dt>
 <dd>If 1 the zfs directory is visible, 0 otherwise</dd>
 </dl>
 
