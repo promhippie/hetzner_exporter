@@ -10,6 +10,15 @@ HETZNER_EXPORTER_WEB_ADDRESS
 HETZNER_EXPORTER_WEB_PATH
 : Path to bind the metrics server, defaults to `/metrics`
 
+HETZNER_EXPORTER_WEB_PPROF
+: Enable pprof debugging for server, defaults to `false`
+
+HETZNER_EXPORTER_WEB_TIMEOUT
+: Server metrics endpoint timeout, defaults to `10s`
+
+HETZNER_EXPORTER_WEB_CONFIG
+: Path to web-config file
+
 HETZNER_EXPORTER_REQUEST_TIMEOUT
 : Request timeout as duration, defaults to `5s`
 
