@@ -112,7 +112,7 @@ func Server(cfg *config.Config, logger log.Logger) error {
 			<-stop
 
 			return nil
-		}, func(err error) {
+		}, func(_ error) {
 			close(stop)
 		})
 	}
@@ -189,14 +189,14 @@ func handler(cfg *config.Config, logger log.Logger, client *hetzner.Client) *chi
 			reg.ServeHTTP(w, r)
 		})
 
-		root.Get("/healthz", func(w http.ResponseWriter, r *http.Request) {
+		root.Get("/healthz", func(w http.ResponseWriter, _ *http.Request) {
 			w.Header().Set("Content-Type", "text/plain")
 			w.WriteHeader(http.StatusOK)
 
 			io.WriteString(w, http.StatusText(http.StatusOK))
 		})
 
-		root.Get("/readyz", func(w http.ResponseWriter, r *http.Request) {
+		root.Get("/readyz", func(w http.ResponseWriter, _ *http.Request) {
 			w.Header().Set("Content-Type", "text/plain")
 			w.WriteHeader(http.StatusOK)
 
