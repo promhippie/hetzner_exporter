@@ -5,7 +5,6 @@ import (
 	"os"
 	"time"
 
-	"github.com/go-kit/log/level"
 	"github.com/promhippie/hetzner_exporter/pkg/action"
 	"github.com/promhippie/hetzner_exporter/pkg/config"
 	"github.com/promhippie/hetzner_exporter/pkg/version"
@@ -34,18 +33,12 @@ func Run() error {
 			logger := setupLogger(cfg)
 
 			if cfg.Target.Username == "" {
-				level.Error(logger).Log(
-					"msg", "Missing required hetzner.username",
-				)
-
+				logger.Error("Missing required hetzner.username")
 				return fmt.Errorf("missing required hetzner.username")
 			}
 
 			if cfg.Target.Password == "" {
-				level.Error(logger).Log(
-					"msg", "Missing required hetzner.password",
-				)
-
+				logger.Error("Missing required hetzner.password")
 				return fmt.Errorf("missing required hetzner.password")
 			}
 

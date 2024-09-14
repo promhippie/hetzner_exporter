@@ -3,14 +3,13 @@ package action
 import (
 	"context"
 	"io"
+	"log/slog"
 	"net/http"
 	"os"
 	"os/signal"
 	"time"
 
 	"github.com/go-chi/chi/v5"
-	"github.com/go-kit/log"
-	"github.com/go-kit/log/level"
 	"github.com/oklog/run"
 	"github.com/prometheus/client_golang/prometheus/promhttp"
 	"github.com/prometheus/exporter-toolkit/web"
@@ -22,9 +21,8 @@ import (
 )
 
 // Server handles the server sub-command.
-func Server(cfg *config.Config, logger log.Logger) error {
-	level.Info(logger).Log(
-		"msg", "Launching Hetzner Exporter",
+func Server(cfg *config.Config, logger *slog.Logger) error {
+	logger.Info("Launching Hetzner Exporter",
 		"version", version.String,
 		"revision", version.Revision,
 		"date", version.Date,
@@ -34,8 +32,7 @@ func Server(cfg *config.Config, logger log.Logger) error {
 	username, err := config.Value(cfg.Target.Username)
 
 	if err != nil {
-		level.Error(logger).Log(
-			"msg", "Failed to load username from file",
+		logger.Error("Failed to load username from file",
 			"err", err,
 		)
 
@@ -45,8 +42,7 @@ func Server(cfg *config.Config, logger log.Logger) error {
 	password, err := config.Value(cfg.Target.Password)
 
 	if err != nil {
-		level.Error(logger).Log(
-			"msg", "Failed to load password from file",
+		logger.Error("Failed to load password from file",
 			"err", err,
 		)
 
@@ -69,9 +65,8 @@ func Server(cfg *config.Config, logger log.Logger) error {
 		}
 
 		gr.Add(func() error {
-			level.Info(logger).Log(
-				"msg", "Starting metrics server",
-				"addr", cfg.Server.Addr,
+			logger.Info("Starting metrics server",
+				"address", cfg.Server.Addr,
 			)
 
 			return web.ListenAndServe(
@@ -88,16 +83,14 @@ func Server(cfg *config.Config, logger log.Logger) error {
 			defer cancel()
 
 			if err := server.Shutdown(ctx); err != nil {
-				level.Error(logger).Log(
-					"msg", "Failed to shutdown metrics gracefully",
+				logger.Error("Failed to shutdown metrics gracefully",
 					"err", err,
 				)
 
 				return
 			}
 
-			level.Info(logger).Log(
-				"msg", "Metrics shutdown gracefully",
+			logger.Info("Metrics shutdown gracefully",
 				"reason", reason,
 			)
 		})
@@ -120,7 +113,7 @@ func Server(cfg *config.Config, logger log.Logger) error {
 	return gr.Run()
 }
 
-func handler(cfg *config.Config, logger log.Logger, client *hetzner.Client) *chi.Mux {
+func handler(cfg *config.Config, logger *slog.Logger, client *hetzner.Client) *chi.Mux {
 	mux := chi.NewRouter()
 	mux.Use(middleware.Recoverer(logger))
 	mux.Use(middleware.RealIP)
@@ -132,9 +125,7 @@ func handler(cfg *config.Config, logger log.Logger, client *hetzner.Client) *chi
 	}
 
 	if cfg.Collector.Servers {
-		level.Debug(logger).Log(
-			"msg", "Server collector registered",
-		)
+		logger.Debug("Server collector registered")
 
 		registry.MustRegister(exporter.NewServerCollector(
 			logger,
@@ -146,9 +137,7 @@ func handler(cfg *config.Config, logger log.Logger, client *hetzner.Client) *chi
 	}
 
 	if cfg.Collector.SSHKeys {
-		level.Debug(logger).Log(
-			"msg", "SSH key collector registered",
-		)
+		logger.Debug("SSH key collector registered")
 
 		registry.MustRegister(exporter.NewSSHKeyCollector(
 			logger,
@@ -160,9 +149,7 @@ func handler(cfg *config.Config, logger log.Logger, client *hetzner.Client) *chi
 	}
 
 	if cfg.Collector.Storageboxes {
-		level.Debug(logger).Log(
-			"msg", "Storagebox collector registered",
-		)
+		logger.Debug("Storagebox collector registered")
 
 		registry.MustRegister(exporter.NewStorageboxCollector(
 			logger,

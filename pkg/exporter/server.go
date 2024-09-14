@@ -2,10 +2,9 @@ package exporter
 
 import (
 	"context"
+	"log/slog"
 	"time"
 
-	"github.com/go-kit/log"
-	"github.com/go-kit/log/level"
 	"github.com/prometheus/client_golang/prometheus"
 	"github.com/promhippie/hetzner_exporter/pkg/config"
 	"github.com/promhippie/hetzner_exporter/pkg/internal/hetzner"
@@ -14,7 +13,7 @@ import (
 // ServerCollector collects metrics about the account in general.
 type ServerCollector struct {
 	client   *hetzner.Client
-	logger   log.Logger
+	logger   *slog.Logger
 	failures *prometheus.CounterVec
 	duration *prometheus.HistogramVec
 	config   config.Target
@@ -27,7 +26,7 @@ type ServerCollector struct {
 }
 
 // NewServerCollector returns a new ServerCollector.
-func NewServerCollector(logger log.Logger, client *hetzner.Client, failures *prometheus.CounterVec, duration *prometheus.HistogramVec, cfg config.Target) *ServerCollector {
+func NewServerCollector(logger *slog.Logger, client *hetzner.Client, failures *prometheus.CounterVec, duration *prometheus.HistogramVec, cfg config.Target) *ServerCollector {
 	if failures != nil {
 		failures.WithLabelValues("account").Add(0)
 	}
@@ -35,7 +34,7 @@ func NewServerCollector(logger log.Logger, client *hetzner.Client, failures *pro
 	labels := []string{"id", "name", "datacenter"}
 	return &ServerCollector{
 		client:   client,
-		logger:   log.With(logger, "collector", "server"),
+		logger:   logger.With("collector", "server"),
 		failures: failures,
 		duration: duration,
 		config:   cfg,
@@ -103,8 +102,7 @@ func (c *ServerCollector) Collect(ch chan<- prometheus.Metric) {
 	c.duration.WithLabelValues("server").Observe(time.Since(now).Seconds())
 
 	if err != nil {
-		level.Error(c.logger).Log(
-			"msg", "Failed to fetch servers",
+		c.logger.Error("Failed to fetch servers",
 			"err", err,
 		)
 
@@ -112,8 +110,7 @@ func (c *ServerCollector) Collect(ch chan<- prometheus.Metric) {
 		return
 	}
 
-	level.Debug(c.logger).Log(
-		"msg", "Fetched servers",
+	c.logger.Debug("Fetched servers",
 		"count", len(servers),
 	)
 
