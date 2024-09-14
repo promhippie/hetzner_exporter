@@ -5,6 +5,7 @@ package main
 
 import (
 	"fmt"
+	"log/slog"
 	"os"
 	"reflect"
 	"sort"
@@ -26,17 +27,17 @@ func main() {
 
 	collectors = append(
 		collectors,
-		exporter.NewServerCollector(nil, nil, nil, nil, config.Load().Target).Metrics()...,
+		exporter.NewServerCollector(slog.Default(), nil, nil, nil, config.Load().Target).Metrics()...,
 	)
 
 	collectors = append(
 		collectors,
-		exporter.NewSSHKeyCollector(nil, nil, nil, nil, config.Load().Target).Metrics()...,
+		exporter.NewSSHKeyCollector(slog.Default(), nil, nil, nil, config.Load().Target).Metrics()...,
 	)
 
 	collectors = append(
 		collectors,
-		exporter.NewStorageboxCollector(nil, nil, nil, nil, config.Load().Target).Metrics()...,
+		exporter.NewStorageboxCollector(slog.Default(), nil, nil, nil, config.Load().Target).Metrics()...,
 	)
 
 	metrics := make([]metric, 0)
