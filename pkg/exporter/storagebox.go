@@ -2,10 +2,9 @@ package exporter
 
 import (
 	"context"
+	"log/slog"
 	"time"
 
-	"github.com/go-kit/log"
-	"github.com/go-kit/log/level"
 	"github.com/prometheus/client_golang/prometheus"
 	"github.com/promhippie/hetzner_exporter/pkg/config"
 	"github.com/promhippie/hetzner_exporter/pkg/internal/hetzner"
@@ -14,7 +13,7 @@ import (
 // StorageboxCollector collects metrics about the SSH keys.
 type StorageboxCollector struct {
 	client   *hetzner.Client
-	logger   log.Logger
+	logger   *slog.Logger
 	failures *prometheus.CounterVec
 	duration *prometheus.HistogramVec
 	config   config.Target
@@ -34,7 +33,7 @@ type StorageboxCollector struct {
 }
 
 // NewStorageboxCollector returns a new StorageboxCollector.
-func NewStorageboxCollector(logger log.Logger, client *hetzner.Client, failures *prometheus.CounterVec, duration *prometheus.HistogramVec, cfg config.Target) *StorageboxCollector {
+func NewStorageboxCollector(logger *slog.Logger, client *hetzner.Client, failures *prometheus.CounterVec, duration *prometheus.HistogramVec, cfg config.Target) *StorageboxCollector {
 	if failures != nil {
 		failures.WithLabelValues("storagebox").Add(0)
 	}
@@ -42,7 +41,7 @@ func NewStorageboxCollector(logger log.Logger, client *hetzner.Client, failures 
 	labels := []string{"id", "name", "location", "login"}
 	return &StorageboxCollector{
 		client:   client,
-		logger:   log.With(logger, "collector", "storagebox"),
+		logger:   logger.With("collector", "storagebox"),
 		failures: failures,
 		duration: duration,
 		config:   cfg,
@@ -166,8 +165,7 @@ func (c *StorageboxCollector) Collect(ch chan<- prometheus.Metric) {
 	c.duration.WithLabelValues("storagebox").Observe(time.Since(now).Seconds())
 
 	if err != nil {
-		level.Error(c.logger).Log(
-			"msg", "Failed to fetch storageboxes",
+		c.logger.Error("Failed to fetch storageboxes",
 			"err", err,
 		)
 
@@ -175,8 +173,7 @@ func (c *StorageboxCollector) Collect(ch chan<- prometheus.Metric) {
 		return
 	}
 
-	level.Debug(c.logger).Log(
-		"msg", "Fetched storageboxes",
+	c.logger.Debug("Fetched storageboxes",
 		"count", len(storageboxes),
 	)
 
@@ -189,8 +186,7 @@ func (c *StorageboxCollector) Collect(ch chan<- prometheus.Metric) {
 		c.duration.WithLabelValues("storagebox").Observe(time.Since(now).Seconds())
 
 		if err != nil {
-			level.Error(c.logger).Log(
-				"msg", "Failed to fetch storagebox",
+			c.logger.Error("Failed to fetch storagebox",
 				"number", storagebox.Number,
 				"err", err,
 			)

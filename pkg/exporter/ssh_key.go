@@ -2,10 +2,9 @@ package exporter
 
 import (
 	"context"
+	"log/slog"
 	"time"
 
-	"github.com/go-kit/log"
-	"github.com/go-kit/log/level"
 	"github.com/prometheus/client_golang/prometheus"
 	"github.com/promhippie/hetzner_exporter/pkg/config"
 	"github.com/promhippie/hetzner_exporter/pkg/internal/hetzner"
@@ -14,7 +13,7 @@ import (
 // SSHKeyCollector collects metrics about the SSH keys.
 type SSHKeyCollector struct {
 	client   *hetzner.Client
-	logger   log.Logger
+	logger   *slog.Logger
 	failures *prometheus.CounterVec
 	duration *prometheus.HistogramVec
 	config   config.Target
@@ -23,7 +22,7 @@ type SSHKeyCollector struct {
 }
 
 // NewSSHKeyCollector returns a new SSHKeyCollector.
-func NewSSHKeyCollector(logger log.Logger, client *hetzner.Client, failures *prometheus.CounterVec, duration *prometheus.HistogramVec, cfg config.Target) *SSHKeyCollector {
+func NewSSHKeyCollector(logger *slog.Logger, client *hetzner.Client, failures *prometheus.CounterVec, duration *prometheus.HistogramVec, cfg config.Target) *SSHKeyCollector {
 	if failures != nil {
 		failures.WithLabelValues("ssh_key").Add(0)
 	}
@@ -31,7 +30,7 @@ func NewSSHKeyCollector(logger log.Logger, client *hetzner.Client, failures *pro
 	labels := []string{"name", "type", "size", "fingerprint"}
 	return &SSHKeyCollector{
 		client:   client,
-		logger:   log.With(logger, "collector", "ssh_key"),
+		logger:   logger.With("collector", "ssh_key"),
 		failures: failures,
 		duration: duration,
 		config:   cfg,
@@ -67,8 +66,7 @@ func (c *SSHKeyCollector) Collect(ch chan<- prometheus.Metric) {
 	c.duration.WithLabelValues("ssh_key").Observe(time.Since(now).Seconds())
 
 	if err != nil {
-		level.Error(c.logger).Log(
-			"msg", "Failed to fetch SSH keys",
+		c.logger.Error("Failed to fetch SSH keys",
 			"err", err,
 		)
 
@@ -76,8 +74,7 @@ func (c *SSHKeyCollector) Collect(ch chan<- prometheus.Metric) {
 		return
 	}
 
-	level.Debug(c.logger).Log(
-		"msg", "Fetched SSH keys",
+	c.logger.Debug("Fetched SSH keys",
 		"count", len(keys),
 	)
 
