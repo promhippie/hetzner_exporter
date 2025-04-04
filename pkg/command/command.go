@@ -1,6 +1,7 @@
 package command
 
 import (
+	"context"
 	"fmt"
 	"os"
 	"time"
@@ -15,21 +16,18 @@ import (
 func Run() error {
 	cfg := config.Load()
 
-	app := &cli.App{
+	app := &cli.Command{
 		Name:    "hetzner_exporter",
 		Version: version.String,
 		Usage:   "Hetzner Exporter",
-		Authors: []*cli.Author{
-			{
-				Name:  "Thomas Boerger",
-				Email: "thomas@webhippie.de",
-			},
+		Authors: []any{
+			"Thomas Boerger <thomas@webhippie.de>",
 		},
 		Flags: RootFlags(cfg),
 		Commands: []*cli.Command{
 			Health(cfg),
 		},
-		Action: func(_ *cli.Context) error {
+		Action: func(_ context.Context, _ *cli.Command) error {
 			logger := setupLogger(cfg)
 
 			if cfg.Target.Username == "" {
@@ -58,7 +56,7 @@ func Run() error {
 		Usage:   "Print the current version of that tool",
 	}
 
-	return app.Run(os.Args)
+	return app.Run(context.Background(), os.Args)
 }
 
 // RootFlags defines the available root flags.
@@ -68,14 +66,14 @@ func RootFlags(cfg *config.Config) []cli.Flag {
 			Name:        "log.level",
 			Value:       "info",
 			Usage:       "Only log messages with given severity",
-			EnvVars:     []string{"HETZNER_EXPORTER_LOG_LEVEL"},
+			Sources:     cli.EnvVars("HETZNER_EXPORTER_LOG_LEVEL"),
 			Destination: &cfg.Logs.Level,
 		},
 		&cli.BoolFlag{
 			Name:        "log.pretty",
 			Value:       false,
 			Usage:       "Enable pretty messages for logging",
-			EnvVars:     []string{"HETZNER_EXPORTER_LOG_PRETTY"},
+			Sources:     cli.EnvVars("HETZNER_EXPORTER_LOG_PRETTY"),
 			Destination: &cfg.Logs.Pretty,
 		},
 		&cli.StringFlag{
@@ -83,7 +81,7 @@ func RootFlags(cfg *config.Config) []cli.Flag {
 			Aliases:     []string{"web.listen-address"},
 			Value:       "0.0.0.0:9502",
 			Usage:       "Address to bind the metrics server",
-			EnvVars:     []string{"HETZNER_EXPORTER_WEB_ADDRESS"},
+			Sources:     cli.EnvVars("HETZNER_EXPORTER_WEB_ADDRESS"),
 			Destination: &cfg.Server.Addr,
 		},
 		&cli.StringFlag{
@@ -91,70 +89,70 @@ func RootFlags(cfg *config.Config) []cli.Flag {
 			Aliases:     []string{"web.telemetry-path"},
 			Value:       "/metrics",
 			Usage:       "Path to bind the metrics server",
-			EnvVars:     []string{"HETZNER_EXPORTER_WEB_PATH"},
+			Sources:     cli.EnvVars("HETZNER_EXPORTER_WEB_PATH"),
 			Destination: &cfg.Server.Path,
 		},
 		&cli.BoolFlag{
 			Name:        "web.debug",
 			Value:       false,
 			Usage:       "Enable pprof debugging for server",
-			EnvVars:     []string{"HETZNER_EXPORTER_WEB_PPROF"},
+			Sources:     cli.EnvVars("HETZNER_EXPORTER_WEB_PPROF"),
 			Destination: &cfg.Server.Pprof,
 		},
 		&cli.DurationFlag{
 			Name:        "web.timeout",
 			Value:       10 * time.Second,
 			Usage:       "Server metrics endpoint timeout",
-			EnvVars:     []string{"HETZNER_EXPORTER_WEB_TIMEOUT"},
+			Sources:     cli.EnvVars("HETZNER_EXPORTER_WEB_TIMEOUT"),
 			Destination: &cfg.Server.Timeout,
 		},
 		&cli.StringFlag{
 			Name:        "web.config",
 			Value:       "",
 			Usage:       "Path to web-config file",
-			EnvVars:     []string{"HETZNER_EXPORTER_WEB_CONFIG"},
+			Sources:     cli.EnvVars("HETZNER_EXPORTER_WEB_CONFIG"),
 			Destination: &cfg.Server.Web,
 		},
 		&cli.DurationFlag{
 			Name:        "request.timeout",
 			Value:       5 * time.Second,
 			Usage:       "Request timeout as duration",
-			EnvVars:     []string{"HETZNER_EXPORTER_REQUEST_TIMEOUT"},
+			Sources:     cli.EnvVars("HETZNER_EXPORTER_REQUEST_TIMEOUT"),
 			Destination: &cfg.Target.Timeout,
 		},
 		&cli.StringFlag{
 			Name:        "hetzner.username",
 			Value:       "",
 			Usage:       "Username for the Hetzner API",
-			EnvVars:     []string{"HETZNER_EXPORTER_USERNAME"},
+			Sources:     cli.EnvVars("HETZNER_EXPORTER_USERNAME"),
 			Destination: &cfg.Target.Username,
 		},
 		&cli.StringFlag{
 			Name:        "hetzner.password",
 			Value:       "",
 			Usage:       "Password for the Hetzner API",
-			EnvVars:     []string{"HETZNER_EXPORTER_PASSWORD"},
+			Sources:     cli.EnvVars("HETZNER_EXPORTER_PASSWORD"),
 			Destination: &cfg.Target.Password,
 		},
 		&cli.BoolFlag{
 			Name:        "collector.servers",
 			Value:       true,
 			Usage:       "Enable collector for servers",
-			EnvVars:     []string{"HETZNER_EXPORTER_COLLECTOR_SERVERS"},
+			Sources:     cli.EnvVars("HETZNER_EXPORTER_COLLECTOR_SERVERS"),
 			Destination: &cfg.Collector.Servers,
 		},
 		&cli.BoolFlag{
 			Name:        "collector.ssh-keys",
 			Value:       true,
 			Usage:       "Enable collector for SSH keys",
-			EnvVars:     []string{"HETZNER_EXPORTER_COLLECTOR_SSH_KEYS"},
+			Sources:     cli.EnvVars("HETZNER_EXPORTER_COLLECTOR_SSH_KEYS"),
 			Destination: &cfg.Collector.SSHKeys,
 		},
 		&cli.BoolFlag{
 			Name:        "collector.storageboxes",
 			Value:       false,
 			Usage:       "Enable collector for Storageboxes",
-			EnvVars:     []string{"HETZNER_EXPORTER_COLLECTOR_STORAGEBOXES"},
+			Sources:     cli.EnvVars("HETZNER_EXPORTER_COLLECTOR_STORAGEBOXES"),
 			Destination: &cfg.Collector.Storageboxes,
 		},
 	}
