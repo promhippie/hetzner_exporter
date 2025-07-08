@@ -32,9 +32,8 @@ type Target struct {
 
 // Collector defines the collector specific configuration.
 type Collector struct {
-	Servers      bool
-	SSHKeys      bool
-	Storageboxes bool
+	Servers bool
+	SSHKeys bool
 }
 
 // Config is a combination of all available configurations.

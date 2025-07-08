@@ -148,12 +148,5 @@ func RootFlags(cfg *config.Config) []cli.Flag {
 			Sources:     cli.EnvVars("HETZNER_EXPORTER_COLLECTOR_SSH_KEYS"),
 			Destination: &cfg.Collector.SSHKeys,
 		},
-		&cli.BoolFlag{
-			Name:        "collector.storageboxes",
-			Value:       false,
-			Usage:       "Enable collector for Storageboxes",
-			Sources:     cli.EnvVars("HETZNER_EXPORTER_COLLECTOR_STORAGEBOXES"),
-			Destination: &cfg.Collector.Storageboxes,
-		},
 	}
 }
