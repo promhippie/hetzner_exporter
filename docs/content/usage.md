@@ -69,7 +69,7 @@ like this to the `docker-compose.yml` file:
 {{< highlight diff >}}
   hetzner_exporter:
 -   image: promhippie/hetzner-exporter:latest
-+   image: promhippie/hetzner-exporter:1.0.0
++   image: promhippie/hetzner-exporter:x.x.x
     restart: always
     environment:
       - HETZNER_EXPORTER_USERNAME=#ws+qOeMD4UP

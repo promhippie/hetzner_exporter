@@ -110,7 +110,7 @@ func (c *Client) Do(req *http.Request, v interface{}) (*Response, error) {
 	res, err := c.httpClient.Do(req)
 
 	if res != nil {
-		defer res.Body.Close()
+		defer func() { _ = res.Body.Close() }()
 	}
 
 	if err != nil {

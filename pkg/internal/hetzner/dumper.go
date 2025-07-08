@@ -43,11 +43,11 @@ type standardDumper struct {
 // DumpRequest implements the Dumper interface.
 func (s *standardDumper) DumpRequest(req *http.Request) {
 	dump, _ := httputil.DumpRequestOut(req, s.body)
-	s.out.Write(dump)
+	_, _ = s.out.Write(dump)
 }
 
 // DumpResponse implements the Dumper interface.
 func (s *standardDumper) DumpResponse(res *http.Response) {
 	dump, _ := httputil.DumpResponse(res, s.body)
-	s.out.Write(dump)
+	_, _ = s.out.Write(dump)
 }
