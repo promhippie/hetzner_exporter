@@ -148,18 +148,6 @@ func handler(cfg *config.Config, logger *slog.Logger, client *hetzner.Client) *c
 		))
 	}
 
-	if cfg.Collector.Storageboxes {
-		logger.Debug("Storagebox collector registered")
-
-		registry.MustRegister(exporter.NewStorageboxCollector(
-			logger,
-			client,
-			requestFailures,
-			requestDuration,
-			cfg.Target,
-		))
-	}
-
 	reg := promhttp.HandlerFor(
 		registry,
 		promhttp.HandlerOpts{

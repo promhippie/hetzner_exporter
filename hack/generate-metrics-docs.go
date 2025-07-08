@@ -35,11 +35,6 @@ func main() {
 		exporter.NewSSHKeyCollector(slog.Default(), nil, nil, nil, config.Load().Target).Metrics()...,
 	)
 
-	collectors = append(
-		collectors,
-		exporter.NewStorageboxCollector(slog.Default(), nil, nil, nil, config.Load().Target).Metrics()...,
-	)
-
 	metrics := make([]metric, 0)
 
 	metrics = append(metrics, metric{

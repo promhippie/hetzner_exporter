@@ -24,9 +24,8 @@ type Client struct {
 	username   string
 	password   string
 
-	Server     ServerClient
-	SSHKey     SSHKeyClient
-	Storagebox StorageboxClient
+	Server ServerClient
+	SSHKey SSHKeyClient
 }
 
 // A ClientOption is used to configure a Client.
@@ -72,7 +71,6 @@ func NewClient(options ...ClientOption) *Client {
 
 	client.Server = ServerClient{client: client}
 	client.SSHKey = SSHKeyClient{client: client}
-	client.Storagebox = StorageboxClient{client: client}
 
 	return client
 }
