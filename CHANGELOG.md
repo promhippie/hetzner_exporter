@@ -1,23 +1,7 @@
-# Changelog for unreleased
-
-The following sections list the changes for unreleased.
-
-## Summary
-
- * Chg #196: Switch to official logging library
-
-## Details
-
- * Change #196: Switch to official logging library
-
-   Since there have been a structured logger part of the Go standard library we
-   thought it's time to replace the library with that. Be aware that log messages
-   should change a little bit.
-
-   https://github.com/promhippie/hetzner_exporter/issues/196
+# Changelog
 
 
-# Changelog for 1.2.0
+## 1.2.0
 
 The following sections list the changes for 1.2.0.
 
@@ -56,7 +40,7 @@ The following sections list the changes for 1.2.0.
    https://github.com/promhippie/hetzner_exporter/pull/142
 
 
-# Changelog for 1.1.0
+## 1.1.0
 
 The following sections list the changes for 1.1.0.
 
@@ -84,7 +68,7 @@ The following sections list the changes for 1.1.0.
    https://github.com/promhippie/hetzner_exporter/issues/61
 
 
-# Changelog for 1.0.0
+## 1.0.0
 
 The following sections list the changes for 1.0.0.
 
@@ -110,7 +94,7 @@ The following sections list the changes for 1.0.0.
    https://github.com/promhippie/hetzner_exporter/issues/18
 
 
-# Changelog for 0.1.0
+## 0.1.0
 
 The following sections list the changes for 0.1.0.
 

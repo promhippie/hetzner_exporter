@@ -180,14 +180,14 @@ func handler(cfg *config.Config, logger *slog.Logger, client *hetzner.Client) *c
 			w.Header().Set("Content-Type", "text/plain")
 			w.WriteHeader(http.StatusOK)
 
-			io.WriteString(w, http.StatusText(http.StatusOK))
+			_, _ = io.WriteString(w, http.StatusText(http.StatusOK))
 		})
 
 		root.Get("/readyz", func(w http.ResponseWriter, _ *http.Request) {
 			w.Header().Set("Content-Type", "text/plain")
 			w.WriteHeader(http.StatusOK)
 
-			io.WriteString(w, http.StatusText(http.StatusOK))
+			_, _ = io.WriteString(w, http.StatusText(http.StatusOK))
 		})
 	})
 
