@@ -1,5 +1,18 @@
 # Changelog
 
+## [2.1.0](https://github.com/promhippie/hetzner_exporter/compare/v2.0.0...v2.1.0) (2025-07-14)
+
+
+### Features
+
+* **deps:** update module github.com/mgechev/revive to v1.11.0 ([d9d3361](https://github.com/promhippie/hetzner_exporter/commit/d9d3361b2ffa0e39d4dfab046050f89c3c453843))
+
+
+### Bugfixes
+
+* **deps:** update golang docker tag to v1.24.5 ([14babda](https://github.com/promhippie/hetzner_exporter/commit/14babda4f295e46f48b01f3fafb3d9d6d55c50f7))
+* **deps:** update module github.com/golangci/golangci-lint/v2 to v2.2.2 ([7a036da](https://github.com/promhippie/hetzner_exporter/commit/7a036dae7718e9f0a912ceb17bb21835fa7175a4))
+
 ## [2.0.0](https://github.com/promhippie/hetzner_exporter/compare/v1.2.0...v2.0.0) (2025-07-09)
 
 
