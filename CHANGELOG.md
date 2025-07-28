@@ -1,5 +1,19 @@
 # Changelog
 
+## [2.2.0](https://github.com/promhippie/hetzner_exporter/compare/v2.1.0...v2.2.0) (2025-07-28)
+
+
+### Features
+
+* **deps:** update module github.com/golangci/golangci-lint/v2 to v2.3.0 ([9527a3d](https://github.com/promhippie/hetzner_exporter/commit/9527a3d0ba5ed55eaa4bc71fad669ec39f06e752))
+
+
+### Miscellaneous
+
+* **deps:** update docker digests ([9e36fe2](https://github.com/promhippie/hetzner_exporter/commit/9e36fe2282467b077f94f5ce599883b6cdf4948c))
+* **deps:** update golang:1.24.5-alpine3.21 docker digest to 6edc205 ([482e173](https://github.com/promhippie/hetzner_exporter/commit/482e1735889891cdf1b1b9b21601328c3d53ebac))
+* **deps:** update golang:1.24.5-alpine3.21 docker digest to 72ff633 ([aa214f7](https://github.com/promhippie/hetzner_exporter/commit/aa214f7b0cc52a35b80315c7a454d9e149a52207))
+
 ## [2.1.0](https://github.com/promhippie/hetzner_exporter/compare/v2.0.0...v2.1.0) (2025-07-14)
 
 
