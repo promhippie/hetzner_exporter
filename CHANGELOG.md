@@ -1,5 +1,13 @@
 # Changelog
 
+## [2.2.1](https://github.com/promhippie/hetzner_exporter/compare/v2.2.0...v2.2.1) (2025-08-04)
+
+
+### Bugfixes
+
+* **deps:** update module github.com/golangci/golangci-lint/v2 to v2.3.1 ([42a8ea8](https://github.com/promhippie/hetzner_exporter/commit/42a8ea86e8c9bd98aa4a6b3af92fad79650497a7))
+* **deps:** update module github.com/prometheus/client_golang to v1.23.0 ([c7f7be3](https://github.com/promhippie/hetzner_exporter/commit/c7f7be3c66bc23668d5a79f39ff85071c577fcab))
+
 ## [2.2.0](https://github.com/promhippie/hetzner_exporter/compare/v2.1.0...v2.2.0) (2025-07-28)
 
 
