@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.2.2](https://github.com/promhippie/hetzner_exporter/compare/v2.2.1...v2.2.2) (2025-08-11)
+
+
+### Bugfixes
+
+* **deps:** update golang docker tag to v1.24.6 ([8d90a63](https://github.com/promhippie/hetzner_exporter/commit/8d90a630faa02a24ca4d56fcb1870993365c221a))
+
 ## [2.2.1](https://github.com/promhippie/hetzner_exporter/compare/v2.2.0...v2.2.1) (2025-08-04)
 
 
