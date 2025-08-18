@@ -1,5 +1,19 @@
 # Changelog
 
+## [2.2.3](https://github.com/promhippie/hetzner_exporter/compare/v2.2.2...v2.2.3) (2025-08-18)
+
+
+### Bugfixes
+
+* correctly hand over goos/goarch to build task ([6bba013](https://github.com/promhippie/hetzner_exporter/commit/6bba013be81dc575f13e8fb1265d434010da7b76))
+* **deps:** update golang docker tag to v1.25.0 ([297704c](https://github.com/promhippie/hetzner_exporter/commit/297704cc5a8ad27ea5da9625d1157f8ab665bf0f))
+* **deps:** update golang:1.25.0-alpine3.21 docker digest to a92c1ab ([fc7621d](https://github.com/promhippie/hetzner_exporter/commit/fc7621d74d758ad0ad1716d4e53c8b016c3c6bd5))
+* **deps:** update golang:1.25.0-alpine3.21 docker digest to c8e1680 ([743221c](https://github.com/promhippie/hetzner_exporter/commit/743221cf17f4ebb735b072cda495ab12c61ec72b))
+* **deps:** update module github.com/golangci/golangci-lint/v2 to v2.4.0 ([f3e724e](https://github.com/promhippie/hetzner_exporter/commit/f3e724e568f77284e454c318927409e50f5c1714))
+* **deps:** update module github.com/urfave/cli/v3 to v3.3.9 ([82a0947](https://github.com/promhippie/hetzner_exporter/commit/82a09471b284408f9dde0a1b73c0847c8aa0376f))
+* **deps:** update module github.com/urfave/cli/v3 to v3.4.0 ([206e656](https://github.com/promhippie/hetzner_exporter/commit/206e656740f72bf52bb6f387b8fe3541d52f73b6))
+* **deps:** update module github.com/urfave/cli/v3 to v3.4.1 ([22626e1](https://github.com/promhippie/hetzner_exporter/commit/22626e18a784df1f40dd2ebcee1fa9bb09aaab9f))
+
 ## [2.2.2](https://github.com/promhippie/hetzner_exporter/compare/v2.2.1...v2.2.2) (2025-08-11)
 
 
