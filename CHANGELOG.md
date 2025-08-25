@@ -1,5 +1,17 @@
 # Changelog
 
+## [2.2.4](https://github.com/promhippie/hetzner_exporter/compare/v2.2.3...v2.2.4) (2025-08-25)
+
+
+### Bugfixes
+
+* **deps:** update module github.com/stretchr/testify to v1.11.0 ([b98714c](https://github.com/promhippie/hetzner_exporter/commit/b98714cbae11a5f5e2bd8292f5326d1b8cb23d51))
+
+
+### Miscellaneous
+
+* **flake:** updated lockfile [skip ci] ([109f77e](https://github.com/promhippie/hetzner_exporter/commit/109f77e37f6a00af97878b98b02dfb05d7899eff))
+
 ## [2.2.3](https://github.com/promhippie/hetzner_exporter/compare/v2.2.2...v2.2.3) (2025-08-18)
 
 
