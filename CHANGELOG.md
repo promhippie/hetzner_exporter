@@ -1,5 +1,19 @@
 # Changelog
 
+## [2.2.5](https://github.com/promhippie/hetzner_exporter/compare/v2.2.4...v2.2.5) (2025-09-01)
+
+
+### Bugfixes
+
+* **deps:** update module github.com/go-chi/chi/v5 to v5.2.3 ([ebc2b75](https://github.com/promhippie/hetzner_exporter/commit/ebc2b7510850561f6501f23a52a8daf5c0f1d30b))
+* **deps:** update module github.com/mgechev/revive to v1.12.0 ([89dc347](https://github.com/promhippie/hetzner_exporter/commit/89dc34731412513f0eee7b9822670210ee52259e))
+* **deps:** update module github.com/stretchr/testify to v1.11.1 ([5d9f422](https://github.com/promhippie/hetzner_exporter/commit/5d9f422adab070474d8aae4678f3ff380373eaea))
+
+
+### Miscellaneous
+
+* **flake:** updated lockfile [skip ci] ([85f1453](https://github.com/promhippie/hetzner_exporter/commit/85f14536e781571cea477e02c96446d987978e35))
+
 ## [2.2.4](https://github.com/promhippie/hetzner_exporter/compare/v2.2.3...v2.2.4) (2025-08-25)
 
 
