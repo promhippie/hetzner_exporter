@@ -1,5 +1,19 @@
 # Changelog
 
+## [2.2.6](https://github.com/promhippie/hetzner_exporter/compare/v2.2.5...v2.2.6) (2025-09-08)
+
+
+### Bugfixes
+
+* **deps:** update golang docker tag to v1.25.1 ([dd04f00](https://github.com/promhippie/hetzner_exporter/commit/dd04f0002a36f3f36b5ff0824a8d3dd8329c7891))
+* **deps:** update module github.com/prometheus/client_golang to v1.23.2 ([0b57ac3](https://github.com/promhippie/hetzner_exporter/commit/0b57ac3d0e7d3f9aedbcdcfc51f540dc64b5c583))
+* **deps:** update module github.com/prometheus/exporter-toolkit to v0.14.1 ([92eeea0](https://github.com/promhippie/hetzner_exporter/commit/92eeea0baf5c1e5dc670df72042e9fa6b6187e05))
+
+
+### Miscellaneous
+
+* **flake:** updated lockfile [skip ci] ([db1d0ae](https://github.com/promhippie/hetzner_exporter/commit/db1d0ae29d7391802f2b0fac80c98c6ab3bdeab8))
+
 ## [2.2.5](https://github.com/promhippie/hetzner_exporter/compare/v2.2.4...v2.2.5) (2025-09-01)
 
 
