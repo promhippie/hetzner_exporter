@@ -1,5 +1,19 @@
 # Changelog
 
+## [2.2.7](https://github.com/promhippie/hetzner_exporter/compare/v2.2.6...v2.2.7) (2025-09-22)
+
+
+### Bugfixes
+
+* **deps:** update module github.com/golangci/golangci-lint/v2 to v2.5.0 ([4dd8483](https://github.com/promhippie/hetzner_exporter/commit/4dd8483058b62f6fb5298220300c12c07d53e85d))
+
+
+### Miscellaneous
+
+* **flake:** updated lockfile [skip ci] ([3a6ba39](https://github.com/promhippie/hetzner_exporter/commit/3a6ba390f7cc5eea6bd6271fb2f1b4d4552bae73))
+* **flake:** updated lockfile [skip ci] ([77e743a](https://github.com/promhippie/hetzner_exporter/commit/77e743acdafe60985b717a97753c11f9ea12c166))
+* move from baltorepo to cloudsmith ([7b882c5](https://github.com/promhippie/hetzner_exporter/commit/7b882c52d27f0096057a9ac989ba5dc3f18e096e))
+
 ## [2.2.6](https://github.com/promhippie/hetzner_exporter/compare/v2.2.5...v2.2.6) (2025-09-08)
 
 
