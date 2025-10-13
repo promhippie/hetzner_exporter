@@ -1,5 +1,24 @@
 # Changelog
 
+## [2.2.8](https://github.com/promhippie/hetzner_exporter/compare/v2.2.7...v2.2.8) (2025-10-13)
+
+
+### Bugfixes
+
+* **deps:** update alpine:3.22 docker digest to 4b7ce07 ([9afd0d7](https://github.com/promhippie/hetzner_exporter/commit/9afd0d79da162089547345173f9f3207a207b7ef))
+* **deps:** update alpine:3.22 docker digest to 56b31e2 ([63cdba9](https://github.com/promhippie/hetzner_exporter/commit/63cdba9a15e58c9fbd9fa4cf3cf50124ab662e2e))
+* **deps:** update golang docker tag to v1.25.2 ([7873d9d](https://github.com/promhippie/hetzner_exporter/commit/7873d9d12999d980945cee40b3b3e1b47cfcacaf))
+* **deps:** update golang:1.25.2-alpine3.21 docker digest to 0134653 ([42b2039](https://github.com/promhippie/hetzner_exporter/commit/42b203976cb497cb0200ecc87de29bc1a7b04501))
+* **deps:** update golang:1.25.2-alpine3.21 docker digest to 0ae17b3 ([2a7542a](https://github.com/promhippie/hetzner_exporter/commit/2a7542a3d872d88c06d7e7432075bd0008816524))
+* **deps:** update golang:1.25.2-alpine3.21 docker digest to e51523f ([b521e26](https://github.com/promhippie/hetzner_exporter/commit/b521e26ae03403290cc3af5c9544f870329d8a02))
+
+
+### Miscellaneous
+
+* **flake:** updated lockfile [skip ci] ([782996f](https://github.com/promhippie/hetzner_exporter/commit/782996fe1a4d1119482e679fefa462cf11ec9648))
+* **flake:** updated lockfile [skip ci] ([a283f10](https://github.com/promhippie/hetzner_exporter/commit/a283f10eaaf807a0968182a316aef79ea5867bcc))
+* **flake:** updated lockfile [skip ci] ([6ccd38d](https://github.com/promhippie/hetzner_exporter/commit/6ccd38de00441416190f5ed8b72665ba83a5cfb8))
+
 ## [2.2.7](https://github.com/promhippie/hetzner_exporter/compare/v2.2.6...v2.2.7) (2025-09-22)
 
 
