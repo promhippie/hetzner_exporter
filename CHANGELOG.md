@@ -1,5 +1,18 @@
 # Changelog
 
+## [2.2.10](https://github.com/promhippie/hetzner_exporter/compare/v2.2.9...v2.2.10) (2025-10-27)
+
+
+### Bugfixes
+
+* **deps:** update module github.com/prometheus/exporter-toolkit to v0.15.0 ([957900b](https://github.com/promhippie/hetzner_exporter/commit/957900bab18036d3d21f7d7bb2c6ca3e3332abc2))
+* **deps:** update module github.com/urfave/cli/v3 to v3.5.0 ([3c79119](https://github.com/promhippie/hetzner_exporter/commit/3c791195a6802167f9727f4240642714887c40d1))
+
+
+### Miscellaneous
+
+* **flake:** updated lockfile [skip ci] ([b4e6e38](https://github.com/promhippie/hetzner_exporter/commit/b4e6e381bccaf19575303553b06cdbb1b64ea07f))
+
 ## [2.2.9](https://github.com/promhippie/hetzner_exporter/compare/v2.2.8...v2.2.9) (2025-10-20)
 
 
