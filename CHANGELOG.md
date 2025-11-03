@@ -1,5 +1,17 @@
 # Changelog
 
+## [2.2.11](https://github.com/promhippie/hetzner_exporter/compare/v2.2.10...v2.2.11) (2025-11-03)
+
+
+### Bugfixes
+
+* **deps:** update module github.com/golangci/golangci-lint/v2 to v2.6.0 ([7656942](https://github.com/promhippie/hetzner_exporter/commit/765694204310878ddb3ec019979f18f0d41993e7))
+
+
+### Miscellaneous
+
+* **flake:** updated lockfile [skip ci] ([2efd5a5](https://github.com/promhippie/hetzner_exporter/commit/2efd5a5c0999ff9b3d138535bbc0368586539499))
+
 ## [2.2.10](https://github.com/promhippie/hetzner_exporter/compare/v2.2.9...v2.2.10) (2025-10-27)
 
 
