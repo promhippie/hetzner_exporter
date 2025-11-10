@@ -1,5 +1,20 @@
 # Changelog
 
+## [2.2.12](https://github.com/promhippie/hetzner_exporter/compare/v2.2.11...v2.2.12) (2025-11-10)
+
+
+### Bugfixes
+
+* **deps:** update golang docker tag to v1.25.4 ([8b0365f](https://github.com/promhippie/hetzner_exporter/commit/8b0365f0f3b5cee29b100e0257598a0bf00cc9ca))
+* **deps:** update golang:1.25.4-alpine3.21 docker digest to 3289aac ([3efd189](https://github.com/promhippie/hetzner_exporter/commit/3efd18932185142d7ff7024bdedb0d732da1d9df))
+* **deps:** update module github.com/golangci/golangci-lint/v2 to v2.6.1 ([ab80082](https://github.com/promhippie/hetzner_exporter/commit/ab80082c635bd971210a38b76b3ca333a2e56b79))
+* **deps:** update module github.com/urfave/cli/v3 to v3.6.0 ([2be99a3](https://github.com/promhippie/hetzner_exporter/commit/2be99a3db97a2114cb8fa032d86b199c474b3105))
+
+
+### Miscellaneous
+
+* **flake:** updated lockfile [skip ci] ([b47168b](https://github.com/promhippie/hetzner_exporter/commit/b47168b97bc7edb117daabfef27a0360eeb03921))
+
 ## [2.2.11](https://github.com/promhippie/hetzner_exporter/compare/v2.2.10...v2.2.11) (2025-11-03)
 
 
