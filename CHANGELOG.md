@@ -1,5 +1,18 @@
 # Changelog
 
+## [2.2.13](https://github.com/promhippie/hetzner_exporter/compare/v2.2.12...v2.2.13) (2025-11-17)
+
+
+### Bugfixes
+
+* **deps:** update module github.com/golangci/golangci-lint/v2 to v2.6.2 ([53fd5a0](https://github.com/promhippie/hetzner_exporter/commit/53fd5a0d3470d81deddf0a127e1af64b11869a1e))
+* **deps:** update module github.com/urfave/cli/v3 to v3.6.1 ([82a30f6](https://github.com/promhippie/hetzner_exporter/commit/82a30f663a22d706e368f0bbc88e1fdfa513dda8))
+
+
+### Miscellaneous
+
+* **flake:** updated lockfile [skip ci] ([6d7b851](https://github.com/promhippie/hetzner_exporter/commit/6d7b851213ef8a0ac2db0fc38782e5a22c9b7ffe))
+
 ## [2.2.12](https://github.com/promhippie/hetzner_exporter/compare/v2.2.11...v2.2.12) (2025-11-10)
 
 
