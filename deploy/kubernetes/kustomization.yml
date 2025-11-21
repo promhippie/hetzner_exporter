@@ -18,6 +18,6 @@ secretGenerator:
 images:
   - name: hetzner-exporter
     newName: quay.io/promhippie/hetzner-exporter
-    newTag: latest@sha256:df621df45a7f7e9a249ddd0116ad383938de33c938a6941139be757051383668
+    newTag: latest@sha256:cd71c12a06420ff014a2fbdbf3c4211a121ce6e42d517b3aca573579d8c5a23e
 
 ...
