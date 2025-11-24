@@ -1,5 +1,37 @@
 # Changelog
 
+## [2.2.14](https://github.com/promhippie/hetzner_exporter/compare/v2.2.13...v2.2.14) (2025-11-24)
+
+
+### Bugfixes
+
+* **deps:** pin quay.io/promhippie/hetzner-exporter docker tag to f84f12a ([9b2988c](https://github.com/promhippie/hetzner_exporter/commit/9b2988ceffe970a80b35dfa79cb4f592f6c359f5))
+* **deps:** update quay.io/promhippie/hetzner-exporter:latest docker digest to 0881747 ([7e41f63](https://github.com/promhippie/hetzner_exporter/commit/7e41f634dbd2f1aa52f194c38bed809eaa6d7beb))
+* **deps:** update quay.io/promhippie/hetzner-exporter:latest docker digest to 2c37d23 ([89e73e4](https://github.com/promhippie/hetzner_exporter/commit/89e73e4c9cb4bad73cf58cd1869a78bf97622711))
+* **deps:** update quay.io/promhippie/hetzner-exporter:latest docker digest to 3244c35 ([376c656](https://github.com/promhippie/hetzner_exporter/commit/376c6565b784aa5bb3ff78336caae138cabea7b7))
+* **deps:** update quay.io/promhippie/hetzner-exporter:latest docker digest to 32b0daa ([c3d5fc2](https://github.com/promhippie/hetzner_exporter/commit/c3d5fc2b0e7741b707cf4929b09455428363a80d))
+* **deps:** update quay.io/promhippie/hetzner-exporter:latest docker digest to 358179a ([c5606ef](https://github.com/promhippie/hetzner_exporter/commit/c5606ef7d287c776e0013a8e86389fd1ee195b80))
+* **deps:** update quay.io/promhippie/hetzner-exporter:latest docker digest to 654b440 ([3449313](https://github.com/promhippie/hetzner_exporter/commit/3449313d5a1a7e0202831855fc346da04b894732))
+* **deps:** update quay.io/promhippie/hetzner-exporter:latest docker digest to 6b2bdaa ([2137c93](https://github.com/promhippie/hetzner_exporter/commit/2137c934b72a424d0b9498b27636a6c25f3cc0b7))
+* **deps:** update quay.io/promhippie/hetzner-exporter:latest docker digest to 6e77087 ([8a8eb2c](https://github.com/promhippie/hetzner_exporter/commit/8a8eb2c048818dfd2d037a731fdf1d36a070f18e))
+* **deps:** update quay.io/promhippie/hetzner-exporter:latest docker digest to 75d5360 ([3e3491a](https://github.com/promhippie/hetzner_exporter/commit/3e3491a8fb61fecd5306e9c5ae39ba806008cff7))
+* **deps:** update quay.io/promhippie/hetzner-exporter:latest docker digest to a3ab681 ([b576cd1](https://github.com/promhippie/hetzner_exporter/commit/b576cd1de06fd8d3b3928cd357b8c36f3581e08c))
+* **deps:** update quay.io/promhippie/hetzner-exporter:latest docker digest to a4fbc29 ([a070b28](https://github.com/promhippie/hetzner_exporter/commit/a070b28376321b11ccdef66e5d14c47fd7a7767b))
+* **deps:** update quay.io/promhippie/hetzner-exporter:latest docker digest to ae5946a ([d147692](https://github.com/promhippie/hetzner_exporter/commit/d14769272d32fabd6219f9badc4ea383182461c2))
+* **deps:** update quay.io/promhippie/hetzner-exporter:latest docker digest to bb61bbd ([9266028](https://github.com/promhippie/hetzner_exporter/commit/926602820db06882ce37df8c99b1b370536627d9))
+* **deps:** update quay.io/promhippie/hetzner-exporter:latest docker digest to cd71c12 ([1bf5ca9](https://github.com/promhippie/hetzner_exporter/commit/1bf5ca95573a21651738808cdd010306ed903498))
+* **deps:** update quay.io/promhippie/hetzner-exporter:latest docker digest to d49eb8b ([8c29497](https://github.com/promhippie/hetzner_exporter/commit/8c29497b52e8618c908f54a4db34ffe7d0cc2472))
+* **deps:** update quay.io/promhippie/hetzner-exporter:latest docker digest to df621df ([58856d0](https://github.com/promhippie/hetzner_exporter/commit/58856d0149b2a087d3b7a676ef36c6cbc2efd909))
+* **deps:** update quay.io/promhippie/hetzner-exporter:latest docker digest to eca43b5 ([0e62d9f](https://github.com/promhippie/hetzner_exporter/commit/0e62d9f19f983c6c15afb92765ef609ca89e1b81))
+* **deps:** update quay.io/promhippie/hetzner-exporter:latest docker digest to ecf9f68 ([37b69d7](https://github.com/promhippie/hetzner_exporter/commit/37b69d782911177d8b6c05eeb17da259f9f74b23))
+* **deps:** update quay.io/promhippie/hetzner-exporter:latest docker digest to ed3a094 ([753a3ef](https://github.com/promhippie/hetzner_exporter/commit/753a3ef7a6ec932a96fac27d53b67b4f279cbb4f))
+
+
+### Miscellaneous
+
+* **deps:** bump golang.org/x/crypto from 0.44.0 to 0.45.0 ([4405a42](https://github.com/promhippie/hetzner_exporter/commit/4405a4224e37069dc5419fcd3a5b84db14e2e380))
+* **flake:** updated lockfile [skip ci] ([94440b5](https://github.com/promhippie/hetzner_exporter/commit/94440b54e3472f3ba4544a7ef2ba4e7f4e7ed2b0))
+
 ## [2.2.13](https://github.com/promhippie/hetzner_exporter/compare/v2.2.12...v2.2.13) (2025-11-17)
 
 
