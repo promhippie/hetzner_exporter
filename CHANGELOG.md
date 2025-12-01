@@ -1,5 +1,17 @@
 # Changelog
 
+## [2.2.15](https://github.com/promhippie/hetzner_exporter/compare/v2.2.14...v2.2.15) (2025-12-01)
+
+
+### Bugfixes
+
+* **deps:** update quay.io/promhippie/hetzner-exporter:latest docker digest to ebb11a6 ([d2cc6cf](https://github.com/promhippie/hetzner_exporter/commit/d2cc6cfeb1beeeb8f42ce6a6d6c5bbf90c70af68))
+
+
+### Miscellaneous
+
+* **flake:** updated lockfile [skip ci] ([cd6361d](https://github.com/promhippie/hetzner_exporter/commit/cd6361d31e29774b86d36d9d8d8eec3866d38875))
+
 ## [2.2.14](https://github.com/promhippie/hetzner_exporter/compare/v2.2.13...v2.2.14) (2025-11-24)
 
 
