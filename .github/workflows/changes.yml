@@ -53,6 +53,7 @@ jobs:
         run: task envvars
 
       - name: Source rebase
+        if: github.event_name != 'pull_request'
         run: git pull --autostash --rebase
 
       - name: Commit changes
@@ -102,6 +103,10 @@ jobs:
 
       - name: Generate metrics
         run: task metrics
+
+      - name: Source rebase
+        if: github.event_name != 'pull_request'
+        run: git pull --autostash --rebase
 
       - name: Commit changes
         if: github.event_name != 'pull_request'
