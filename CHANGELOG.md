@@ -1,5 +1,24 @@
 # Changelog
 
+## [2.3.0](https://github.com/promhippie/hetzner_exporter/compare/v2.2.15...v2.3.0) (2025-12-08)
+
+
+### Features
+
+* **minor:** update alpine docker tag to v3.23 ([#323](https://github.com/promhippie/hetzner_exporter/issues/323)) ([14c6c09](https://github.com/promhippie/hetzner_exporter/commit/14c6c095ff197516f84278ca42141b8a9add2c6e))
+
+
+### Bugfixes
+
+* **patch:** update golang docker tag to v1.25.5 ([#322](https://github.com/promhippie/hetzner_exporter/issues/322)) ([90d48ea](https://github.com/promhippie/hetzner_exporter/commit/90d48eaba801875c6f91570912b2d3c276f3b851))
+
+
+### Miscellaneous
+
+* drop issue and pull request template ([a473159](https://github.com/promhippie/hetzner_exporter/commit/a473159d26f2cbfb4b65ac2f86f2a212711f7cf7))
+* **flake:** updated lockfile [skip ci] ([ace3c70](https://github.com/promhippie/hetzner_exporter/commit/ace3c70c2999e714db2239728e69231bfbecc24a))
+* just format some yaml comment ([21c4d9b](https://github.com/promhippie/hetzner_exporter/commit/21c4d9bf16ea77800c6bff45856b509de788b2f8))
+
 ## [2.2.15](https://github.com/promhippie/hetzner_exporter/compare/v2.2.14...v2.2.15) (2025-12-01)
 
 
