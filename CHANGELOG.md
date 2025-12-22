@@ -1,5 +1,18 @@
 # Changelog
 
+## [2.3.1](https://github.com/promhippie/hetzner_exporter/compare/v2.3.0...v2.3.1) (2025-12-22)
+
+
+### Bugfixes
+
+* **deps:** update alpine:3.23 docker digest to 865b95f ([#332](https://github.com/promhippie/hetzner_exporter/issues/332)) ([f93ab62](https://github.com/promhippie/hetzner_exporter/commit/f93ab6234aefbfef113bce78272d805ec7dea44a))
+
+
+### Miscellaneous
+
+* **flake:** updated lockfile [skip ci] ([814179e](https://github.com/promhippie/hetzner_exporter/commit/814179e2d8cf72b1a3851751593a4fdf5f352b2f))
+* **flake:** updated lockfile [skip ci] ([dbfeca3](https://github.com/promhippie/hetzner_exporter/commit/dbfeca34e044ad3aa6b8aeb532b67e1b22a5a962))
+
 ## [2.3.0](https://github.com/promhippie/hetzner_exporter/compare/v2.2.15...v2.3.0) (2025-12-08)
 
 
