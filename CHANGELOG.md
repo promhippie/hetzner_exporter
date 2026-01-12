@@ -1,5 +1,17 @@
 # Changelog
 
+## [2.3.2](https://github.com/promhippie/hetzner_exporter/compare/v2.3.1...v2.3.2) (2026-01-12)
+
+### Bugfixes
+
+* **patch:** update module github.com/prometheus/exporter-toolkit to v0.15.1 ([#337](https://github.com/promhippie/hetzner_exporter/issues/337)) ([735cec3](https://github.com/promhippie/hetzner_exporter/commit/735cec376c4d022891b11bc7b656c3f38880d8fe))
+
+### Miscellaneous
+
+* **flake:** updated lockfile [skip ci] ([66434d0](https://github.com/promhippie/hetzner_exporter/commit/66434d0cf6538696e73fd98c37171f5e40dc0cd2))
+* **flake:** updated lockfile [skip ci] ([c8dbe90](https://github.com/promhippie/hetzner_exporter/commit/c8dbe90d63b393e8b0f626ca3875d3b548b01e49))
+* **flake:** updated lockfile [skip ci] ([670f80d](https://github.com/promhippie/hetzner_exporter/commit/670f80d9a3813e886c632fa2b7e5b7e8fb53401c))
+
 ## [2.3.1](https://github.com/promhippie/hetzner_exporter/compare/v2.3.0...v2.3.1) (2025-12-22)
 
 
