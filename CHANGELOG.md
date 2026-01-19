@@ -1,5 +1,16 @@
 # Changelog
 
+## [2.3.3](https://github.com/promhippie/hetzner_exporter/compare/v2.3.2...v2.3.3) (2026-01-19)
+
+### Bugfixes
+
+* **patch:** update module github.com/go-chi/chi/v5 to v5.2.4 ([#341](https://github.com/promhippie/hetzner_exporter/issues/341)) ([c005867](https://github.com/promhippie/hetzner_exporter/commit/c0058672df7038d09f22ca7abcee57a02b8a4bee))
+* **patch:** update module github.com/urfave/cli/v3 to v3.6.2 ([#343](https://github.com/promhippie/hetzner_exporter/issues/343)) ([ab1dcf0](https://github.com/promhippie/hetzner_exporter/commit/ab1dcf04ea6aceacaa61f6f5d92dfd89c5967c03))
+
+### Miscellaneous
+
+* **flake:** updated lockfile [skip ci] ([d8238e6](https://github.com/promhippie/hetzner_exporter/commit/d8238e641c1371253ceeb115035ab830221fbef8))
+
 ## [2.3.2](https://github.com/promhippie/hetzner_exporter/compare/v2.3.1...v2.3.2) (2026-01-12)
 
 ### Bugfixes
