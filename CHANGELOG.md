@@ -1,5 +1,15 @@
 # Changelog
 
+## [2.3.5](https://github.com/promhippie/hetzner_exporter/compare/v2.3.4...v2.3.5) (2026-02-09)
+
+### Bugfixes
+
+* **patch:** update module github.com/go-chi/chi/v5 to v5.2.5 ([#346](https://github.com/promhippie/hetzner_exporter/issues/346)) ([59e3c25](https://github.com/promhippie/hetzner_exporter/commit/59e3c25aeaf91ac367885307cb5c50c81e219eb6))
+
+### Miscellaneous
+
+* **flake:** updated lockfile [skip ci] ([a4467ba](https://github.com/promhippie/hetzner_exporter/commit/a4467ba18f69ada484f6e26a35dd046904e06758))
+
 ## [2.3.4](https://github.com/promhippie/hetzner_exporter/compare/v2.3.3...v2.3.4) (2026-02-02)
 
 ### Bugfixes
