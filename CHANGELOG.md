@@ -1,5 +1,19 @@
 # Changelog
 
+## [2.4.0](https://github.com/promhippie/hetzner_exporter/compare/v2.3.5...v2.4.0) (2026-03-02)
+
+### Features
+
+* **minor:** update module github.com/urfave/cli/v3 to v3.7.0 ([#348](https://github.com/promhippie/hetzner_exporter/issues/348)) ([57e6144](https://github.com/promhippie/hetzner_exporter/commit/57e6144cee8ee9d217a897be27a0d65b3f8d93fb))
+
+### Miscellaneous
+
+* enable skip-package-name-collision-with-go-std for revive ([b65521d](https://github.com/promhippie/hetzner_exporter/commit/b65521d4dadb02bc72a810ed89fac6281c98cce5))
+* **flake:** updated lockfile [skip ci] ([17fb8bf](https://github.com/promhippie/hetzner_exporter/commit/17fb8bfa7c5598e8f6196c062a76e84e5f996868))
+* **flake:** updated lockfile [skip ci] ([a1ccc12](https://github.com/promhippie/hetzner_exporter/commit/a1ccc129f364624c03e90f8469b8a6822764f221))
+* **flake:** updated lockfile [skip ci] ([2d301c8](https://github.com/promhippie/hetzner_exporter/commit/2d301c8f9814bbe3c6a94abf9db44756ded53b52))
+* replace nixfmt package ([d0c8783](https://github.com/promhippie/hetzner_exporter/commit/d0c878387e93389baf308c7ed8f4096332a09d8b))
+
 ## [2.3.5](https://github.com/promhippie/hetzner_exporter/compare/v2.3.4...v2.3.5) (2026-02-09)
 
 ### Bugfixes
