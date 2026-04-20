@@ -1,5 +1,16 @@
 # Changelog
 
+## [2.6.1](https://github.com/promhippie/hetzner_exporter/compare/v2.6.0...v2.6.1) (2026-04-20)
+
+### Bugfixes
+
+* **deps:** update alpine:3.23 docker digest to 5b10f43 ([#359](https://github.com/promhippie/hetzner_exporter/issues/359)) ([a2bbe8f](https://github.com/promhippie/hetzner_exporter/commit/a2bbe8feb74c12000433c7a137d3a22f8fc9f538))
+
+### Miscellaneous
+
+* **flake:** updated lockfile [skip ci] ([be9dec5](https://github.com/promhippie/hetzner_exporter/commit/be9dec51cde079605105af9835b6720754bf0c64))
+* **flake:** updated lockfile [skip ci] ([6b64995](https://github.com/promhippie/hetzner_exporter/commit/6b64995ef73d00af5085bd258ac702bb3b6b3587))
+
 ## [2.6.0](https://github.com/promhippie/hetzner_exporter/compare/v2.5.0...v2.6.0) (2026-04-06)
 
 ### Features
