@@ -1,5 +1,18 @@
 # Changelog
 
+## [2.7.0](https://github.com/promhippie/hetzner_exporter/compare/v2.6.1...v2.7.0) (2026-05-18)
+
+### Features
+
+* **minor:** update module github.com/urfave/cli/v3 to v3.9.0 ([#365](https://github.com/promhippie/hetzner_exporter/issues/365)) ([7d11cc6](https://github.com/promhippie/hetzner_exporter/commit/7d11cc67a2791ee1313b0504ac4361ca4695ef4d))
+
+### Miscellaneous
+
+* **flake:** updated lockfile [skip ci] ([cff7792](https://github.com/promhippie/hetzner_exporter/commit/cff77929144f626da45165e280962328e63d6dd1))
+* **flake:** updated lockfile [skip ci] ([e7c8abf](https://github.com/promhippie/hetzner_exporter/commit/e7c8abff9ec0b48e78dfb91355959c6eb4991aec))
+* **flake:** updated lockfile [skip ci] ([9eb04fc](https://github.com/promhippie/hetzner_exporter/commit/9eb04fcaba83eb904c1f0c56210545c430e5c6b8))
+* **flake:** updated lockfile [skip ci] ([07ebf0c](https://github.com/promhippie/hetzner_exporter/commit/07ebf0cda7b0bdac7df931589125bc3a7e4077b2))
+
 ## [2.6.1](https://github.com/promhippie/hetzner_exporter/compare/v2.6.0...v2.6.1) (2026-04-20)
 
 ### Bugfixes
