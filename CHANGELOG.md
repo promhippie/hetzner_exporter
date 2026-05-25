@@ -1,5 +1,22 @@
 # Changelog
 
+## [2.8.0](https://github.com/promhippie/hetzner_exporter/compare/v2.7.0...v2.8.0) (2026-05-25)
+
+### Features
+
+* **minor:** update module github.com/go-chi/chi/v5 to v5.3.0 ([#366](https://github.com/promhippie/hetzner_exporter/issues/366)) ([35da5a8](https://github.com/promhippie/hetzner_exporter/commit/35da5a834f1f8bd680134b052eaa518bc2ca3bcc))
+* upgrade required go version to 1.26 ([1fadc25](https://github.com/promhippie/hetzner_exporter/commit/1fadc25da46be47a74a85967d7d6baf98211ae9d))
+
+### Bugfixes
+
+* **deps:** pin golang docker tag to 91eda97 ([#367](https://github.com/promhippie/hetzner_exporter/issues/367)) ([2248239](https://github.com/promhippie/hetzner_exporter/commit/224823928f232a148faaf81bd4c213adab9a28cb))
+* enforce 1.26.3 for docker image ([9b695de](https://github.com/promhippie/hetzner_exporter/commit/9b695dedb24d55969e2ea5a9ab2a5dbb45d39bfe))
+
+### Miscellaneous
+
+* **flake:** updated lockfile [skip ci] ([39ea27f](https://github.com/promhippie/hetzner_exporter/commit/39ea27f7ac847acffe5738fde30461d85be9f282))
+* switch flake input to 25.11 release ([eec0978](https://github.com/promhippie/hetzner_exporter/commit/eec0978d9f7c11da17ac631b5ea8f788cb5687a1))
+
 ## [2.7.0](https://github.com/promhippie/hetzner_exporter/compare/v2.6.1...v2.7.0) (2026-05-18)
 
 ### Features
