@@ -1,5 +1,17 @@
 # Changelog
 
+## [2.8.1](https://github.com/promhippie/hetzner_exporter/compare/v2.8.0...v2.8.1) (2026-06-08)
+
+### Bugfixes
+
+* **deps:** update docker digests ([#369](https://github.com/promhippie/hetzner_exporter/issues/369)) ([6aa24ec](https://github.com/promhippie/hetzner_exporter/commit/6aa24ec66064aa1f4c0f6b0e68fd4516b75b0f27))
+* **patch:** update golang docker tag to v1.26.4 ([#368](https://github.com/promhippie/hetzner_exporter/issues/368)) ([9664c5e](https://github.com/promhippie/hetzner_exporter/commit/9664c5e2f6809a6b5653ec0c8accdedc3ca0dfac))
+
+### Miscellaneous
+
+* **flake:** updated lockfile [skip ci] ([a58d40d](https://github.com/promhippie/hetzner_exporter/commit/a58d40dc54b6225f3c75c6f9a666c251e265fae7))
+* **flake:** updated lockfile [skip ci] ([f8424cc](https://github.com/promhippie/hetzner_exporter/commit/f8424ccf71f39ab5e2f5053c506fb25ab6b8dc76))
+
 ## [2.8.0](https://github.com/promhippie/hetzner_exporter/compare/v2.7.0...v2.8.0) (2026-05-25)
 
 ### Features
