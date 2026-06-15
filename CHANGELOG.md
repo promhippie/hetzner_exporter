@@ -1,5 +1,23 @@
 # Changelog
 
+## [2.9.0](https://github.com/promhippie/hetzner_exporter/compare/v2.8.1...v2.9.0) (2026-06-15)
+
+### Features
+
+* **minor:** update alpine docker tag to v3.24 ([#370](https://github.com/promhippie/hetzner_exporter/issues/370)) ([dfefa60](https://github.com/promhippie/hetzner_exporter/commit/dfefa60af4475d0cc0dba5b30b2e94a1d5d5d94f))
+* **minor:** update module github.com/urfave/cli/v3 to v3.10.0 ([#375](https://github.com/promhippie/hetzner_exporter/issues/375)) ([316074a](https://github.com/promhippie/hetzner_exporter/commit/316074af925fa9d3f2379f38ca52174f10c8bfd7))
+
+### Bugfixes
+
+* **deps:** update docker digests ([9479a49](https://github.com/promhippie/hetzner_exporter/commit/9479a49d7fe521e17fb3a48bd4ada0a0638d531b))
+* **deps:** update docker digests ([5e31576](https://github.com/promhippie/hetzner_exporter/commit/5e315767186beb9c0dc9c54ba4a461aa6c850658))
+* **deps:** update docker digests ([#374](https://github.com/promhippie/hetzner_exporter/issues/374)) ([934190a](https://github.com/promhippie/hetzner_exporter/commit/934190af3caa554159986d476c80ae92c520b79b))
+* **patch:** update module github.com/urfave/cli/v3 to v3.9.1 ([#372](https://github.com/promhippie/hetzner_exporter/issues/372)) ([82317a7](https://github.com/promhippie/hetzner_exporter/commit/82317a76919edf2c9dea26fccb535f2280072f0b))
+
+### Miscellaneous
+
+* **flake:** updated lockfile [skip ci] ([4a34622](https://github.com/promhippie/hetzner_exporter/commit/4a34622486a8231c9d474b62901fed88beff276f))
+
 ## [2.8.1](https://github.com/promhippie/hetzner_exporter/compare/v2.8.0...v2.8.1) (2026-06-08)
 
 ### Bugfixes
