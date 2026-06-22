@@ -1,5 +1,17 @@
 # Changelog
 
+## [2.9.1](https://github.com/promhippie/hetzner_exporter/compare/v2.9.0...v2.9.1) (2026-06-22)
+
+### Bugfixes
+
+* **deps:** update docker digests ([#376](https://github.com/promhippie/hetzner_exporter/issues/376)) ([fef489c](https://github.com/promhippie/hetzner_exporter/commit/fef489c5efc2beca2b7ebcd6dfd09a753e706da3))
+* **deps:** update docker digests ([#377](https://github.com/promhippie/hetzner_exporter/issues/377)) ([5030b83](https://github.com/promhippie/hetzner_exporter/commit/5030b83bef137a4170fb792514d4038309376b75))
+* **deps:** update docker digests ([#378](https://github.com/promhippie/hetzner_exporter/issues/378)) ([125a1dc](https://github.com/promhippie/hetzner_exporter/commit/125a1dc82ee301fe7b849dbc2671a34b5b254a2f))
+
+### Miscellaneous
+
+* **flake:** updated lockfile [skip ci] ([b557977](https://github.com/promhippie/hetzner_exporter/commit/b557977c80e2b71659d19231200caed48d7f6256))
+
 ## [2.9.0](https://github.com/promhippie/hetzner_exporter/compare/v2.8.1...v2.9.0) (2026-06-15)
 
 ### Features
