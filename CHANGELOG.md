@@ -1,5 +1,7 @@
 # Changelog
 
+## [2.11.0](https://github.com/promhippie/hetzner_exporter/compare/v2.10.1...v2.11.0) (2026-07-27)
+
 ## [2.10.1](https://github.com/promhippie/hetzner_exporter/compare/v2.10.0...v2.10.1) (2026-07-13)
 
 ## [2.10.0](https://github.com/promhippie/hetzner_exporter/compare/v2.9.2...v2.10.0) (2026-07-06)
