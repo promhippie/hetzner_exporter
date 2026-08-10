@@ -1,5 +1,17 @@
 # Changelog
 
+## [2.12.0](https://github.com/promhippie/hetzner_exporter/compare/v2.11.0...v2.12.0) (2026-08-10)
+
+### Features
+
+* **minor:** update dependency github:cloudsmith-io/cloudsmith-cli to v1.21.0 ([#393](https://github.com/promhippie/hetzner_exporter/issues/393)) ([22d46d1](https://github.com/promhippie/hetzner_exporter/commit/22d46d1a4818c8fb0c4afc06059ba0f87ee48234))
+* **minor:** update dependency golangci-lint to v2.12.2 ([c9d95d3](https://github.com/promhippie/hetzner_exporter/commit/c9d95d3100533cf64f0850fa4ece1e4cfad1a790))
+* restructure repo and build processes ([08d42d3](https://github.com/promhippie/hetzner_exporter/commit/08d42d30ec220deafb82e6e739e4784d6e19fd2d))
+
+### Bugfixes
+
+* **patch:** update dependency cosign to v3.1.3 ([#395](https://github.com/promhippie/hetzner_exporter/issues/395)) ([a717951](https://github.com/promhippie/hetzner_exporter/commit/a7179518f704180f891919e1f39c2030fa6e82d8))
+
 ## [2.11.0](https://github.com/promhippie/hetzner_exporter/compare/v2.10.1...v2.11.0) (2026-07-27)
 
 ## [2.10.1](https://github.com/promhippie/hetzner_exporter/compare/v2.10.0...v2.10.1) (2026-07-13)
