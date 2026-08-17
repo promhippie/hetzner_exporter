@@ -1,5 +1,21 @@
 # Changelog
 
+## [2.13.0](https://github.com/promhippie/hetzner_exporter/compare/v2.12.0...v2.13.0) (2026-08-17)
+
+### Features
+
+* **minor:** update dependency github:cloudsmith-io/cloudsmith-cli to v1.22.0 ([#398](https://github.com/promhippie/hetzner_exporter/issues/398)) ([653d38b](https://github.com/promhippie/hetzner_exporter/commit/653d38be69bc3eca4b31fc70b0ec7cebb3a69e27))
+* **minor:** update dependency github:cloudsmith-io/cloudsmith-cli to v1.23.0 ([#402](https://github.com/promhippie/hetzner_exporter/issues/402)) ([c3e9c1f](https://github.com/promhippie/hetzner_exporter/commit/c3e9c1f767e1a1e0377e20e0d15515f06e7a41fd))
+* **minor:** update dependency hugo-extended to v0.165.0 ([#399](https://github.com/promhippie/hetzner_exporter/issues/399)) ([7d83c51](https://github.com/promhippie/hetzner_exporter/commit/7d83c51aeb9ceba4ceecdb020f13dd33e7b4521e))
+* **minor:** update module github.com/urfave/cli/v3 to v3.11.0 ([#404](https://github.com/promhippie/hetzner_exporter/issues/404)) ([66725e3](https://github.com/promhippie/hetzner_exporter/commit/66725e3951db3cf19f86ca45ce061325f3c24acd))
+
+### Bugfixes
+
+* **deps:** update golang:1.26.6-alpine docker digest to 3889b42 ([#403](https://github.com/promhippie/hetzner_exporter/issues/403)) ([93fec2a](https://github.com/promhippie/hetzner_exporter/commit/93fec2a741a4d3e8214ccca7dd6396450c3b3d72))
+* **patch:** update dependency go to v1.26.6 ([#400](https://github.com/promhippie/hetzner_exporter/issues/400)) ([a8f3b16](https://github.com/promhippie/hetzner_exporter/commit/a8f3b160adf6ea700b931d0c9b414b2bcf710dd5))
+* **patch:** update dependency pre-commit to v4.6.2 ([#397](https://github.com/promhippie/hetzner_exporter/issues/397)) ([dca0df6](https://github.com/promhippie/hetzner_exporter/commit/dca0df60d2faa11c118a8e4ef14f776d2563b4ad))
+* **patch:** update golang docker tag to v1.26.6 ([#401](https://github.com/promhippie/hetzner_exporter/issues/401)) ([cef5385](https://github.com/promhippie/hetzner_exporter/commit/cef538552a8c55be83693b063bcdf57c0f03a669))
+
 ## [2.12.0](https://github.com/promhippie/hetzner_exporter/compare/v2.11.0...v2.12.0) (2026-08-10)
 
 ### Features
