@@ -1,5 +1,22 @@
 # Changelog
 
+## [2.14.0](https://github.com/promhippie/hetzner_exporter/compare/v2.13.0...v2.14.0) (2026-08-24)
+
+### Features
+
+* **minor:** update dependency github:cloudsmith-io/cloudsmith-cli to v1.24.0 ([#406](https://github.com/promhippie/hetzner_exporter/issues/406)) ([5b48de1](https://github.com/promhippie/hetzner_exporter/commit/5b48de18a63626d694feac6118afaa3908a3140f))
+* **minor:** update dependency golangci-lint to v2.13.0 ([#412](https://github.com/promhippie/hetzner_exporter/issues/412)) ([2b1bccf](https://github.com/promhippie/hetzner_exporter/commit/2b1bccf006c27fc024c6ab88258cb075b1e12ab9))
+* **minor:** update dependency task to v3.53.1 ([#407](https://github.com/promhippie/hetzner_exporter/issues/407)) ([9f6742f](https://github.com/promhippie/hetzner_exporter/commit/9f6742fbe8f75338d0e9a24469a2d362869dfdd2))
+* **minor:** update golang docker tag to v1.27.0 ([#410](https://github.com/promhippie/hetzner_exporter/issues/410)) ([665582e](https://github.com/promhippie/hetzner_exporter/commit/665582ec5a983f6bd331acac11de0a01cc7356ea))
+* **minor:** update module github.com/stretchr/testify to v1.12.0 ([#405](https://github.com/promhippie/hetzner_exporter/issues/405)) ([4157651](https://github.com/promhippie/hetzner_exporter/commit/4157651bb1ec89708747f9df2f9c875c54fa0e6d))
+
+### Bugfixes
+
+* **deps:** update golang:1.27.0-alpine docker digest to 4c9fe60 ([#411](https://github.com/promhippie/hetzner_exporter/issues/411)) ([15c6847](https://github.com/promhippie/hetzner_exporter/commit/15c684724e48a061653da15a86e7f0d4bcd88922))
+* **patch:** update dependency golangci-lint to v2.13.1 ([#414](https://github.com/promhippie/hetzner_exporter/issues/414)) ([4aed23e](https://github.com/promhippie/hetzner_exporter/commit/4aed23e9899b3a22233a270637bdfa333ca80d06))
+* **patch:** update module github.com/go-chi/chi/v5 to v5.3.2 ([#413](https://github.com/promhippie/hetzner_exporter/issues/413)) ([bb529e5](https://github.com/promhippie/hetzner_exporter/commit/bb529e570daf3a75037018b929b9cc1ba826df20))
+* **patch:** update module github.com/stretchr/testify to v1.12.1 ([#408](https://github.com/promhippie/hetzner_exporter/issues/408)) ([ed8e124](https://github.com/promhippie/hetzner_exporter/commit/ed8e124076821a0d9c5cc74fbd2c655d4dc0b683))
+
 ## [2.13.0](https://github.com/promhippie/hetzner_exporter/compare/v2.12.0...v2.13.0) (2026-08-17)
 
 ### Features
