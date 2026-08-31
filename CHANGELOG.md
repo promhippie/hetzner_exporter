@@ -1,5 +1,19 @@
 # Changelog
 
+## [2.15.0](https://github.com/promhippie/hetzner_exporter/compare/v2.14.0...v2.15.0) (2026-08-31)
+
+### Features
+
+* **minor:** update dependency github:cloudsmith-io/cloudsmith-cli to v1.25.0 ([#417](https://github.com/promhippie/hetzner_exporter/issues/417)) ([c2746ac](https://github.com/promhippie/hetzner_exporter/commit/c2746ac7c70af2b73b304f0ea50284cafc820b10))
+* **minor:** update dependency github:cloudsmith-io/cloudsmith-cli to v1.26.0 ([#419](https://github.com/promhippie/hetzner_exporter/issues/419)) ([d269e84](https://github.com/promhippie/hetzner_exporter/commit/d269e84fc08d8302c4a7d2e8d12920ff672df7c0))
+* **minor:** update dependency go to v1.27.0 ([#409](https://github.com/promhippie/hetzner_exporter/issues/409)) ([1aa1d18](https://github.com/promhippie/hetzner_exporter/commit/1aa1d18e3ff43db12d851bca1e55e22033e68a8e))
+* **minor:** update dependency goreleaser to v2.18.0 ([#415](https://github.com/promhippie/hetzner_exporter/issues/415)) ([7158d03](https://github.com/promhippie/hetzner_exporter/commit/7158d03610c5944831e6cbb574c3f3037a163e24))
+* **minor:** update module github.com/prometheus/exporter-toolkit to v0.19.0 ([#418](https://github.com/promhippie/hetzner_exporter/issues/418)) ([0bb15e0](https://github.com/promhippie/hetzner_exporter/commit/0bb15e0b0556f93c30f38398e3cb4a7a0df6ad2c))
+
+### Bugfixes
+
+* **patch:** update dependency golangci-lint to v2.13.2 ([#420](https://github.com/promhippie/hetzner_exporter/issues/420)) ([ce80b64](https://github.com/promhippie/hetzner_exporter/commit/ce80b64757e70b4d60495f849be7123bd9cfe679))
+
 ## [2.14.0](https://github.com/promhippie/hetzner_exporter/compare/v2.13.0...v2.14.0) (2026-08-24)
 
 ### Features
