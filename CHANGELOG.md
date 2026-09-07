@@ -1,5 +1,14 @@
 # Changelog
 
+## [2.15.1](https://github.com/promhippie/hetzner_exporter/compare/v2.15.0...v2.15.1) (2026-09-07)
+
+### Bugfixes
+
+* **deps:** update golang:1.27.1-alpine docker digest to cf6fca6 ([#424](https://github.com/promhippie/hetzner_exporter/issues/424)) ([4901b68](https://github.com/promhippie/hetzner_exporter/commit/4901b68f1371c6830b263d1ef81322950a4ce73b))
+* **patch:** update dependency go to v1.27.1 ([#422](https://github.com/promhippie/hetzner_exporter/issues/422)) ([baccfaf](https://github.com/promhippie/hetzner_exporter/commit/baccfaf61996b9675b4b7ccfa77964b58a3bfe44))
+* **patch:** update dependency goreleaser to v2.18.1 ([#425](https://github.com/promhippie/hetzner_exporter/issues/425)) ([51c725c](https://github.com/promhippie/hetzner_exporter/commit/51c725cb0c19c4daabe265a1e79b546c9f1f4bcc))
+* **patch:** update golang docker tag to v1.27.1 ([#423](https://github.com/promhippie/hetzner_exporter/issues/423)) ([839dc3d](https://github.com/promhippie/hetzner_exporter/commit/839dc3d3aff6cbcf96418268ff2b3b90a2a321a9))
+
 ## [2.15.0](https://github.com/promhippie/hetzner_exporter/compare/v2.14.0...v2.15.0) (2026-08-31)
 
 ### Features
