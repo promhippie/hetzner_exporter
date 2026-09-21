@@ -1,5 +1,19 @@
 # Changelog
 
+## [2.16.0](https://github.com/promhippie/hetzner_exporter/compare/v2.15.1...v2.16.0) (2026-09-21)
+
+### Features
+
+* **minor:** update module github.com/dustin/go-humanize to v1.1.0 ([#433](https://github.com/promhippie/hetzner_exporter/issues/433)) ([f33f7f9](https://github.com/promhippie/hetzner_exporter/commit/f33f7f99e9289130d75511fa51f2af69d8a2812c))
+* **minor:** update module github.com/urfave/cli/v3 to v3.12.0 ([#429](https://github.com/promhippie/hetzner_exporter/issues/429)) ([8cbdef1](https://github.com/promhippie/hetzner_exporter/commit/8cbdef1cac45fe9ed8598e953ccde73c4b2099dd))
+* **minor:** update module github.com/urfave/cli/v3 to v3.13.0 ([#435](https://github.com/promhippie/hetzner_exporter/issues/435)) ([37c6128](https://github.com/promhippie/hetzner_exporter/commit/37c61286d272e0c3a12170d757b5d6394d75bf6e))
+
+### Bugfixes
+
+* **deps:** update alpine:3.24 docker digest to 294b683 ([#434](https://github.com/promhippie/hetzner_exporter/issues/434)) ([5c47bb8](https://github.com/promhippie/hetzner_exporter/commit/5c47bb839cffdcbaeaa202485a253271f092ab5b))
+* **deps:** update docker digests ([#431](https://github.com/promhippie/hetzner_exporter/issues/431)) ([ffa12cd](https://github.com/promhippie/hetzner_exporter/commit/ffa12cd81bfd4c56c28f601273ea4e9aa852756b))
+* **deps:** update docker digests ([#432](https://github.com/promhippie/hetzner_exporter/issues/432)) ([5812684](https://github.com/promhippie/hetzner_exporter/commit/581268454da66c4462792737f097d0e531d154d0))
+
 ## [2.15.1](https://github.com/promhippie/hetzner_exporter/compare/v2.15.0...v2.15.1) (2026-09-07)
 
 ### Bugfixes
