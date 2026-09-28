@@ -1,5 +1,15 @@
 # Changelog
 
+## [2.17.0](https://github.com/promhippie/hetzner_exporter/compare/v2.16.0...v2.17.0) (2026-09-28)
+
+### Features
+
+* **minor:** update module github.com/prometheus/exporter-toolkit to v0.20.0 ([#437](https://github.com/promhippie/hetzner_exporter/issues/437)) ([5fbb184](https://github.com/promhippie/hetzner_exporter/commit/5fbb184e493bbcfde2e6c60da0c44f25c22b8699))
+
+### Bugfixes
+
+* **deps:** update golang:1.27.1-alpine docker digest to 8a5910f ([#436](https://github.com/promhippie/hetzner_exporter/issues/436)) ([405b4d6](https://github.com/promhippie/hetzner_exporter/commit/405b4d66615a53032b9f4e2de0c68fa029ecdb58))
+
 ## [2.16.0](https://github.com/promhippie/hetzner_exporter/compare/v2.15.1...v2.16.0) (2026-09-21)
 
 ### Features
