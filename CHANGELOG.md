@@ -1,5 +1,11 @@
 # Changelog
 
+## [2.18.0](https://github.com/promhippie/hetzner_exporter/compare/v2.17.0...v2.18.0) (2026-10-05)
+
+### Features
+
+* **minor:** update module github.com/urfave/cli/v3 to v3.14.0 ([#444](https://github.com/promhippie/hetzner_exporter/issues/444)) ([b173b0e](https://github.com/promhippie/hetzner_exporter/commit/b173b0e5c01f5520415c353a601ea9d8fe5a2bdf))
+
 ## [2.17.0](https://github.com/promhippie/hetzner_exporter/compare/v2.16.0...v2.17.0) (2026-09-28)
 
 ### Features
