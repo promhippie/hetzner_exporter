@@ -1,5 +1,17 @@
 # Changelog
 
+## [2.19.0](https://github.com/promhippie/hetzner_exporter/compare/v2.18.0...v2.19.0) (2026-10-12)
+
+### Features
+
+* **minor:** update module github.com/go-chi/chi/v5 to v5.4.0 ([#452](https://github.com/promhippie/hetzner_exporter/issues/452)) ([b411d37](https://github.com/promhippie/hetzner_exporter/commit/b411d372a947522b2e6e5ae5aa1a7179d5b8211b))
+* **minor:** update module github.com/prometheus/client_golang to v1.25.0 ([#447](https://github.com/promhippie/hetzner_exporter/issues/447)) ([738553d](https://github.com/promhippie/hetzner_exporter/commit/738553d4ab533e28485fa4bdfb2943cb69610f02))
+
+### Bugfixes
+
+* **deps:** update golang:1.27.2-alpine docker digest to f92b6ef ([#451](https://github.com/promhippie/hetzner_exporter/issues/451)) ([8ff4e89](https://github.com/promhippie/hetzner_exporter/commit/8ff4e8975288b92383a078b9572676437e353e35))
+* **patch:** update golang docker tag to v1.27.2 ([#449](https://github.com/promhippie/hetzner_exporter/issues/449)) ([d5ba635](https://github.com/promhippie/hetzner_exporter/commit/d5ba6351013b58b7c99c19f06ec6f9c7b5555fc9))
+
 ## [2.18.0](https://github.com/promhippie/hetzner_exporter/compare/v2.17.0...v2.18.0) (2026-10-05)
 
 ### Features
