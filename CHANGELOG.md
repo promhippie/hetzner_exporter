@@ -1,5 +1,11 @@
 # Changelog
 
+## [2.20.0](https://github.com/promhippie/hetzner_exporter/compare/v2.19.0...v2.20.0) (2026-10-19)
+
+### Features
+
+* **minor:** update module github.com/go-chi/chi/v5 to v5.5.0 ([#455](https://github.com/promhippie/hetzner_exporter/issues/455)) ([b26598a](https://github.com/promhippie/hetzner_exporter/commit/b26598a17e3ba11c0f8aceb1a57b4c691148ad55))
+
 ## [2.19.0](https://github.com/promhippie/hetzner_exporter/compare/v2.18.0...v2.19.0) (2026-10-12)
 
 ### Features
