@@ -1,5 +1,15 @@
 # Changelog
 
+## [2.20.1](https://github.com/promhippie/hetzner_exporter/compare/v2.20.0...v2.20.1) (2026-10-26)
+
+### Bugfixes
+
+* **deps:** update alpine:3.24 docker digest to 71e9b7b ([#465](https://github.com/promhippie/hetzner_exporter/issues/465)) ([9f8f1dd](https://github.com/promhippie/hetzner_exporter/commit/9f8f1dd0d927c000e5c8f1e26f837dde1780d87a))
+* **deps:** update alpine:3.24 docker digest to be26560 ([#469](https://github.com/promhippie/hetzner_exporter/issues/469)) ([d121ffd](https://github.com/promhippie/hetzner_exporter/commit/d121ffd418800913f021aa5aeb47e796e3d73bcd))
+* **deps:** update docker digests ([#464](https://github.com/promhippie/hetzner_exporter/issues/464)) ([c1e945f](https://github.com/promhippie/hetzner_exporter/commit/c1e945ff3c2c96f3140a01674c8290956657a26b))
+* **deps:** update golang:1.27.3-alpine docker digest to b8c9b82 ([#466](https://github.com/promhippie/hetzner_exporter/issues/466)) ([b791ba5](https://github.com/promhippie/hetzner_exporter/commit/b791ba5329151b27d263ddeb7c9f73416debd223))
+* **patch:** update golang docker tag to v1.27.3 ([#461](https://github.com/promhippie/hetzner_exporter/issues/461)) ([be753f6](https://github.com/promhippie/hetzner_exporter/commit/be753f693cf23acf77967658f6c4f08875c3a6b5))
+
 ## [2.20.0](https://github.com/promhippie/hetzner_exporter/compare/v2.19.0...v2.20.0) (2026-10-19)
 
 ### Features
