@@ -1,5 +1,11 @@
 # Changelog
 
+## [2.20.2](https://github.com/promhippie/hetzner_exporter/compare/v2.20.1...v2.20.2) (2026-11-02)
+
+### Bugfixes
+
+* **deps:** update golang:1.27.3-alpine docker digest to d200d2d ([#470](https://github.com/promhippie/hetzner_exporter/issues/470)) ([696ccbd](https://github.com/promhippie/hetzner_exporter/commit/696ccbd11c6e91f793f8b499fba61fcc9e2b80e2))
+
 ## [2.20.1](https://github.com/promhippie/hetzner_exporter/compare/v2.20.0...v2.20.1) (2026-10-26)
 
 ### Bugfixes
