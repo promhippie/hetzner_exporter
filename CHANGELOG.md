@@ -1,5 +1,13 @@
 # Changelog
 
+## [2.20.3](https://github.com/promhippie/hetzner_exporter/compare/v2.20.2...v2.20.3) (2026-11-09)
+
+### Bugfixes
+
+* **deps:** update alpine:3.24 docker digest to f59abe6 ([#478](https://github.com/promhippie/hetzner_exporter/issues/478)) ([1a55bba](https://github.com/promhippie/hetzner_exporter/commit/1a55bba04e90040e7c9c32b4490a564bd0813bb8))
+* **deps:** update docker digests ([#476](https://github.com/promhippie/hetzner_exporter/issues/476)) ([3754a43](https://github.com/promhippie/hetzner_exporter/commit/3754a43a705f5e743654018fde712bfcc18627a4))
+* **deps:** update docker digests ([#477](https://github.com/promhippie/hetzner_exporter/issues/477)) ([0301e79](https://github.com/promhippie/hetzner_exporter/commit/0301e7987e6dee4019e46a4eeb0942f4ece5eee0))
+
 ## [2.20.2](https://github.com/promhippie/hetzner_exporter/compare/v2.20.1...v2.20.2) (2026-11-02)
 
 ### Bugfixes
