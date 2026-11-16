@@ -1,5 +1,11 @@
 # Changelog
 
+## [2.20.4](https://github.com/promhippie/hetzner_exporter/compare/v2.20.3...v2.20.4) (2026-11-16)
+
+### Bugfixes
+
+* **patch:** update golang docker tag to v1.27.4 ([#480](https://github.com/promhippie/hetzner_exporter/issues/480)) ([02c54fa](https://github.com/promhippie/hetzner_exporter/commit/02c54fad807cbef1410f7f7bff41d042de8cd2bf))
+
 ## [2.20.3](https://github.com/promhippie/hetzner_exporter/compare/v2.20.2...v2.20.3) (2026-11-09)
 
 ### Bugfixes
